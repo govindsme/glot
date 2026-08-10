@@ -13,7 +13,46 @@ Questions & Answers
     I am Govind
     How are you?
     You are Govind. Aren't you?
+    Yes, I am. 
     How are you doing?
+    I am a home maker
     What do you do?
+    I work as an IT professional
+    When are you coming?
+    I will come at 12:30 PM
+    Which is your hometown?
+    I am from Bangalore,India
+    Why are they late?
+    They had some personal emergency
+    How does she feel now?
+    She feels a lot better
 Negatives
     I am not Govind
+Adjectives
+    More
+    Many
+    Little
+    Some
+    Any
+    Always
+    Never
+    Sometimes
+    Usually
+    Rarely
+Tenses
+    Do you drink tea?
+    I drink tea
+    Did you drink tea?
+    I drank tea
+    Will you drink tea?
+    I will drink tea
+    Are you drinking tea?
+    I am drinking tea
+    Is he happy?
+    He is happy
+    Were they happy?
+    They were happy
+    Will we be happy?
+    We will be happy
+    How are you feeling?
+    You are feeling happy
