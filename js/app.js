@@ -78,12 +78,11 @@ async function init() {
 }
 
 function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme === "light" ? "light" : "dark");
   if (theme === "light") {
-    document.documentElement.setAttribute("data-theme", "light");
     $("#btnTheme").textContent = "\u25D1";
     $("#btnTheme").title = "Switch to dark theme";
   } else {
-    document.documentElement.removeAttribute("data-theme");
     $("#btnTheme").textContent = "\u25D0";
     $("#btnTheme").title = "Switch to light theme";
   }

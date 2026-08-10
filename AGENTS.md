@@ -10,7 +10,7 @@ each English phrase with its translations, and plays them aloud using the browse
 Web Speech API (`window.speechSynthesis`).
 
 Learning languages (configurable, order in `CONFIG.languages`):
-Hindi (`hi`), Sanskrit (`sa`), Kannada (`kn`), Tamil (`ta`).
+Hindi (`hi`), Sanskrit (`sa`), Kannada (`kn`), Tamil (`ta`), Dutch (`nl`).
 
 ## Architecture
 
@@ -44,7 +44,8 @@ The file lives at repo root and is version-controlled. `CONFIG.dataFile` default
   hi: { text: "सुप्रभात", pron: "su-pra-bhaat" },
   sa: { text: "सुप्रभातम्", pron: "su-pra-bhaa-tam" },
   kn: { text: "ಶುಭೋದಯ", pron: "shu-bho-da-ya" },
-  ta: { text: "காலை வணக்கம்", pron: "kaa-lai va-nak-kam" }
+  ta: { text: "காலை வணக்கம்", pron: "kaa-lai va-nak-kam" },
+  nl: { text: "Goedemorgen", pron: "khoo-duh-mor-khen" }
 }
 ```
 
@@ -53,7 +54,7 @@ The file lives at repo root and is version-controlled. `CONFIG.dataFile` default
   (closest English approximation; English lacks some sounds, so it is phonetic).
 
 When adding phrases to `glot.txt`, you MUST add matching entries to `TRANSLATIONS`
-for all four languages (`hi`, `sa`, `kn`, `ta`). Missing entries render
+for all five languages (`hi`, `sa`, `kn`, `ta`, `nl`). Missing entries render
 "No translation available yet." Keep it that way — never fail hard.
 
 ## Playback behaviour (js/app.js)
@@ -80,7 +81,9 @@ For each English phrase, in order:
 - Color themes: dark (default) and light. Toggle button (`#btnTheme`) in the header;
   choice persisted in `settings.theme`. Themes are defined as CSS custom properties on
   `:root` / `[data-theme="light"]`; all colors must come from these variables.
-  `prefers-color-scheme: light` is honored only when the user has not picked a theme.
+  `applyTheme()` always sets `data-theme="light"` or `data-theme="dark"` explicitly on
+  `<html>` (never removes it), so the `@media (prefers-color-scheme: light)` fallback
+  only ever applies before JS runs — it must not override an explicit choice.
 
 ## Versioning
 
