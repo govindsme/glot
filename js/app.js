@@ -65,6 +65,7 @@ function translationsFor(englishText, langKey) {
 }
 
 async function init() {
+  $("#versionTag").textContent = "v" + CONFIG.version;
   buildSpeedSelect();
   bindEvents();
   engine.onvoiceschanged = () => {

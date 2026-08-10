@@ -78,6 +78,18 @@ For each English phrase, in order:
 - `CONFIG` holds defaults. When a language is disabled, it is hidden from the
   display and skipped during playback.
 
+## Versioning
+
+Strict semantic versioning: `V[major].[minor].[patch]` (e.g. `v1.1.0`).
+
+- The current version lives in `CONFIG.version` (js/config.js) and is shown in the UI header
+  in a smaller font, directly under the "Glot" title.
+- Git tags mirror the version exactly (`v1.1.0`). Bump `CONFIG.version` and tag the same commit.
+- Increment rules:
+  - `major` — breaking changes (data format, settings schema, incompatible behaviour).
+  - `minor` — backwards-compatible features (new languages, new settings, new UI).
+  - `patch` — bug fixes, wording, cosmetic changes.
+
 ## Conventions / rules for agents
 
 - Keep single-file-per-concern structure; do not introduce build steps.
