@@ -112,10 +112,11 @@ function renderChapterList() {
       item.className = "phrase-item";
       item.textContent = p;
       item.dataset.idx = idx;
+      const phraseIdx = idx;
       item.addEventListener("click", () => {
         stopPlayback();
-        state.current = idx;
-        renderPhrase(idx);
+        state.current = phraseIdx;
+        renderPhrase(phraseIdx);
         updateTransport();
       });
       listEl.appendChild(item);
