@@ -9,6 +9,44 @@
   --accent-2: #37c29b;
   --danger: #e05d6f;
   --speaking: #37c29b;
+  --overlay: rgba(5, 8, 15, 0.7);
+  --speaking-glow: rgba(55, 194, 155, 0.35);
+}
+
+[data-theme="light"] {
+  --bg: #f4f7fb;
+  --panel: #ffffff;
+  --panel-2: #eef2f8;
+  --border: #d5ddeb;
+  --text: #1c2434;
+  --muted: #5c6a85;
+  --accent: #2f6fe0;
+  --accent-2: #0f9d74;
+  --danger: #d8404f;
+  --speaking: #0f9d74;
+  --overlay: rgba(20, 28, 45, 0.45);
+  --speaking-glow: rgba(15, 157, 116, 0.3);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --bg: #f4f7fb;
+    --panel: #ffffff;
+    --panel-2: #eef2f8;
+    --border: #d5ddeb;
+    --text: #1c2434;
+    --muted: #5c6a85;
+    --accent: #2f6fe0;
+    --accent-2: #0f9d74;
+    --danger: #d8404f;
+    --speaking: #0f9d74;
+    --overlay: rgba(20, 28, 45, 0.45);
+    --speaking-glow: rgba(15, 157, 116, 0.3);
+  }
+}
+
+body {
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 * {
@@ -260,7 +298,7 @@ input[type="number"] {
 
 .lang-card.speaking {
   border-color: var(--speaking);
-  box-shadow: 0 0 0 2px rgba(55, 194, 155, 0.35);
+  box-shadow: 0 0 0 2px var(--speaking-glow);
 }
 
 .lang-card .lang-label {
@@ -305,7 +343,7 @@ input[type="number"] {
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(5, 8, 15, 0.7);
+  background: var(--overlay);
   display: flex;
   align-items: center;
   justify-content: center;

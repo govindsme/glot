@@ -77,6 +77,10 @@ For each English phrase, in order:
 - Persisted in `localStorage` under key `glot-settings` (see `STORAGE_KEY`).
 - `CONFIG` holds defaults. When a language is disabled, it is hidden from the
   display and skipped during playback.
+- Color themes: dark (default) and light. Toggle button (`#btnTheme`) in the header;
+  choice persisted in `settings.theme`. Themes are defined as CSS custom properties on
+  `:root` / `[data-theme="light"]`; all colors must come from these variables.
+  `prefers-color-scheme: light` is honored only when the user has not picked a theme.
 
 ## Versioning
 

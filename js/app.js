@@ -25,6 +25,7 @@ function defaultSettings() {
   return {
     enabled,
     voices,
+    theme: "dark",
     speed: CONFIG.speed,
     pauseBetweenLanguages: CONFIG.pauseBetweenLanguages,
     pauseBeforeNextEnglish: CONFIG.pauseBeforeNextEnglish,
@@ -40,6 +41,7 @@ function loadSettings() {
     return {
       enabled: { ...base.enabled, ...(saved.enabled || {}) },
       voices: { ...base.voices, ...(saved.voices || {}) },
+      theme: saved.theme || base.theme,
       speed: saved.speed ?? base.speed,
       pauseBetweenLanguages: saved.pauseBetweenLanguages ?? base.pauseBetweenLanguages,
       pauseBeforeNextEnglish: saved.pauseBeforeNextEnglish ?? base.pauseBeforeNextEnglish,
@@ -66,12 +68,25 @@ function translationsFor(englishText, langKey) {
 
 async function init() {
   $("#versionTag").textContent = "v" + CONFIG.version;
+  applyTheme(state.settings.theme);
   buildSpeedSelect();
   bindEvents();
   engine.onvoiceschanged = () => {
     renderSettings();
   };
   await loadData();
+}
+
+function applyTheme(theme) {
+  if (theme === "light") {
+    document.documentElement.setAttribute("data-theme", "light");
+    $("#btnTheme").textContent = "\u25D1";
+    $("#btnTheme").title = "Switch to dark theme";
+  } else {
+    document.documentElement.removeAttribute("data-theme");
+    $("#btnTheme").textContent = "\u25D0";
+    $("#btnTheme").title = "Switch to light theme";
+  }
 }
 
 async function loadData() {
@@ -293,6 +308,13 @@ function bindEvents() {
   });
 
   $("#btnStop").addEventListener("click", () => stopPlayback());
+
+  $("#btnTheme").addEventListener("click", () => {
+    const next = state.settings.theme === "light" ? "dark" : "light";
+    state.settings.theme = next;
+    saveSettings();
+    applyTheme(next);
+  });
 
   $("#btnSettings").addEventListener("click", () => {
     renderSettings();
