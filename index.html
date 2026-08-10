@@ -12,18 +12,10 @@
       <div>Glot<span class="tagline">phrase player</span></div>
       <div id="versionTag" class="version"></div>
     </div>
-    <div class="transport">
-      <button id="btnPrev" title="Previous">&#9198;</button>
-      <button id="btnPlay" title="Play / Pause">&#9654;</button>
-      <button id="btnStop" title="Stop">&#9632;</button>
-      <button id="btnNext" title="Next">&#9197;</button>
-      <label class="speed">
-        Speed
-        <select id="speedSelect"></select>
-      </label>
+    <div class="topbar-actions">
+      <button id="btnTheme" class="settings-btn" title="Toggle theme">&#9681;</button>
+      <button id="btnSettings" class="settings-btn" title="Settings">&#9881; Settings</button>
     </div>
-    <button id="btnTheme" class="settings-btn" title="Toggle theme">&#9681;</button>
-    <button id="btnSettings" class="settings-btn" title="Settings">&#9881; Settings</button>
   </header>
 
   <main class="layout">
@@ -38,6 +30,17 @@
       </div>
     </section>
   </main>
+
+  <div class="transport" id="transport">
+    <button id="btnPrev" title="Previous">&#9198;</button>
+    <button id="btnPlay" title="Play / Pause">&#9654;</button>
+    <button id="btnStop" title="Stop">&#9632;</button>
+    <button id="btnNext" title="Next">&#9197;</button>
+    <label class="speed">
+      Speed
+      <select id="speedSelect"></select>
+    </label>
+  </div>
 
   <div id="settingsModal" class="modal hidden">
     <div class="modal-card">
