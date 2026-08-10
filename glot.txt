@@ -1,0 +1,19 @@
+Greetings
+    Good Morning
+    Good Afternoon
+    Good Evening
+    Good Night
+    Hi
+    Bye
+    See you later
+    See you soon
+    Nice to meet you
+Questions & Answers
+    Who are you?
+    I am Govind
+    How are you?
+    You are Govind. Aren't you?
+    How are you doing?
+    What do you do?
+Negatives
+    I am not Govind

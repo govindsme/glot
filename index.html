@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glot — Multi-Language Phrase Player</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Glot<span class="tagline">phrase player</span></div>
+    <div class="transport">
+      <button id="btnPrev" title="Previous">&#9198;</button>
+      <button id="btnPlay" title="Play / Pause">&#9654;</button>
+      <button id="btnStop" title="Stop">&#9632;</button>
+      <button id="btnNext" title="Next">&#9197;</button>
+      <label class="speed">
+        Speed
+        <select id="speedSelect"></select>
+      </label>
+    </div>
+    <button id="btnSettings" class="settings-btn" title="Settings">&#9881; Settings</button>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <h2>Chapters</h2>
+      <div id="chapterList"></div>
+    </aside>
+
+    <section class="stage">
+      <div id="phraseDisplay">
+        <div class="placeholder">Load phrases to begin.</div>
+      </div>
+    </section>
+  </main>
+
+  <div id="settingsModal" class="modal hidden">
+    <div class="modal-card">
+      <h2>Settings</h2>
+      <div class="settings-body">
+        <div class="setting-group">
+          <h3>Languages</h3>
+          <div id="langToggles"></div>
+        </div>
+        <div class="setting-group">
+          <h3>Voices</h3>
+          <div id="voiceSelects"></div>
+        </div>
+        <div class="setting-group">
+          <h3>Pauses</h3>
+          <label>
+            Between languages (ms)
+            <input type="number" id="pauseBetween" min="0" step="100" />
+          </label>
+          <label>
+            Before next English phrase (ms)
+            <input type="number" id="pauseBeforeNext" min="0" step="100" />
+          </label>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button id="btnSaveSettings" class="primary">Save</button>
+        <button id="btnCancelSettings">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="statusToast" class="toast hidden"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/parser.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
