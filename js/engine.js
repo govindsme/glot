@@ -31,6 +31,16 @@ class SpeechEngine {
     if (typeof this.synth.onvoiceschanged !== "undefined") {
       this.synth.onvoiceschanged = load;
     }
+    // Some browsers expose voices late; force a re-check shortly after load.
+    const retry = () => {
+      if (this.voices.length === 0 && this.synth.getVoices) {
+        load();
+      }
+    };
+    if (typeof window !== "undefined") {
+      window.setTimeout(retry, 200);
+      window.setTimeout(retry, 1000);
+    }
   }
 
   _langKey(lang) {
@@ -39,8 +49,8 @@ class SpeechEngine {
 
   _pickDefaults() {
     this.defaults = {};
-    const langCodes = ["en", "hi", "sa", "kn", "ta"];
-    for (const code of langCodes) {
+    // Also include "" so an explicit language-agnostic fallback can be chosen.
+    for (const code of ["en", "hi", "kn", "ta"]) {
       const list = this.voicesByLang[code] || [];
       if (list.length === 0) {
         this.defaults[code] = null;
@@ -52,7 +62,9 @@ class SpeechEngine {
   }
 
   getVoicesForLang(langCode) {
-    return this.voicesByLang[this._langKey(langCode)] || [];
+    const key = this._langKey(langCode);
+    const exact = this.voicesByLang[key] || [];
+    return exact;
   }
 
   getDefaultVoice(langCode) {
@@ -61,6 +73,7 @@ class SpeechEngine {
   }
 
   getVoiceByURI(uri) {
+    if (!uri) return null;
     return this.voices.find((v) => v.voiceURI === uri) || null;
   }
 
@@ -68,6 +81,7 @@ class SpeechEngine {
     if (!this.synth) return Promise.resolve();
     return new Promise((resolve) => {
       const u = new SpeechSynthesisUtterance(text);
+      // Prefer an explicit saved voice, then the language default.
       const voice = this.getVoiceByURI(voiceURI) || this.getDefaultVoice(langCode);
       if (voice) {
         u.voice = voice;
@@ -76,10 +90,28 @@ class SpeechEngine {
         u.lang = langCode;
       }
       u.rate = rate || 1;
+      // Keep the utterance alive across the async onend/onerror handlers.
       this.currentUtterance = u;
-      u.onend = () => resolve();
-      u.onerror = (e) => resolve(e.error || "error");
+      let settled = false;
+      const settle = (val) => {
+        if (settled) return;
+        settled = true;
+        resolve(val);
+      };
+      let started = false;
+      u.onend = () => settle(null);
+      u.onerror = (e) => settle(e.error || "error");
+      u.onstart = () => {
+        started = true;
+        window.clearTimeout(startWatchdog);
+      };
+      // If speech never actually begins (e.g. no usable voice), do not hang.
+      const startWatchdog = window.setTimeout(() => {
+        if (!started) settle("no-start");
+      }, 2500);
       this.synth.speak(u);
+      // Hard safety net so playback never stalls indefinitely.
+      window.setTimeout(() => settle("timeout"), 60000);
     });
   }
 

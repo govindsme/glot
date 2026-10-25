@@ -10,7 +10,19 @@ each English phrase with its translations, and plays them aloud using the browse
 Web Speech API (`window.speechSynthesis`).
 
 Learning languages (configurable, order in `CONFIG.languages`):
-Hindi (`hi`), Sanskrit (`sa`), Kannada (`kn`), Tamil (`ta`), Dutch (`nl`).
+Hindi (`hi`), Kannada (`kn`), Tamil (`ta`).
+
+## Content source
+
+The app replicates the **Quick Reference** revision content from the Dutch Lesson
+Revisor (`https://dutch-lesson-revisor.ai.studio/`) in a phased, day-by-day manner,
+with **English as the base language**. Only the English base phrases are taken from
+the Quick Reference; Sanskrit and Dutch are excluded. The Hindi/Kannada/Tamil
+translations are authored in this repo (`js/data.js`).
+
+Progress so far — **Phase 1 (Day 1)**: verb conjugations ("be happy" across present,
+past, perfect, future + modal can/must/may/want), "have/has"/"had a car", and
+tense-contrast questions. Each lesson day is a separate set of chapters in `glot.txt`.
 
 ## Architecture
 
@@ -42,10 +54,8 @@ The file lives at repo root and is version-controlled. `CONFIG.dataFile` default
 ```js
 "Good Morning": {
   hi: { text: "सुप्रभात", pron: "su-pra-bhaat" },
-  sa: { text: "सुप्रभातम्", pron: "su-pra-bhaa-tam" },
   kn: { text: "ಶುಭೋದಯ", pron: "shu-bho-da-ya" },
-  ta: { text: "காலை வணக்கம்", pron: "kaa-lai va-nak-kam" },
-  nl: { text: "Goedemorgen", pron: "khoo-duh-mor-khen" }
+  ta: { text: "காலை வணக்கம்", pron: "kaa-lai va-nak-kam" }
 }
 ```
 
@@ -54,8 +64,15 @@ The file lives at repo root and is version-controlled. `CONFIG.dataFile` default
   (closest English approximation; English lacks some sounds, so it is phonetic).
 
 When adding phrases to `glot.txt`, you MUST add matching entries to `TRANSLATIONS`
-for all five languages (`hi`, `sa`, `kn`, `ta`, `nl`). Missing entries render
+for all three languages (`hi`, `kn`, `ta`). Missing entries render
 "No translation available yet." Keep it that way — never fail hard.
+
+## Fonts
+
+Language cards carry script classes (`lang-hi`, `lang-kn`, `lang-ta`) and the CSS
+assigns each an appropriate system font stack (`Noto Sans Devanagari/Kannada/Tamil`,
+`Nirmala UI`, `Mangal`/`Mallige`/`Latha`, `Lohit ...`) so Indic scripts render on any
+platform. No external font files are bundled.
 
 ## Playback behaviour (js/app.js)
 
@@ -90,7 +107,7 @@ For each English phrase, in order:
 Strict semantic versioning: `V[major].[minor].[patch]` (e.g. `v1.1.0`).
 
 - The current version lives in `CONFIG.version` (js/config.js) and is shown in the UI header
-  in a smaller font, directly under the "Glot" title.
+  in a smaller font, directly under the "Glot" title, and in the page `<title>` ("Glot vX.Y.Z — Phrase Player").
 - Git tags mirror the version exactly (`v1.1.0`). Bump `CONFIG.version` and tag the same commit.
 - Increment rules:
   - `major` — breaking changes (data format, settings schema, incompatible behaviour).
@@ -105,6 +122,6 @@ Strict semantic versioning: `V[major].[minor].[patch]` (e.g. `v1.1.0`).
 - Verify with `node --check js/*.js` after editing JS.
 - Run `python3 -m http.server <port>` from repo root to test; the app must be served
   over HTTP (fetch of `glot.txt` will not work from `file://`).
-- If you change `glot.txt`, update `js/data.js` translations for all 4 languages and
+- If you change `glot.txt`, update `js/data.js` translations for all 3 languages and
   re-run the coverage check against the parser output.
 - Do not commit unless explicitly asked.

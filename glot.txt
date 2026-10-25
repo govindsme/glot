@@ -1,58 +1,132 @@
-Greetings
-    Good Morning
-    Good Afternoon
-    Good Evening
-    Good Night
-    Hi
-    Bye
-    See you later
-    See you soon
-    Nice to meet you
-Questions & Answers
-    Who are you?
-    I am Govind
-    How are you?
-    You are Govind. Aren't you?
-    Yes, I am. 
-    How are you doing?
-    I am a home maker
-    What do you do?
-    I work as an IT professional
-    When are you coming?
-    I will come at 12:30 PM
-    Which is your hometown?
-    I am from Bangalore,India
-    Why are they late?
-    They had some personal emergency
-    How does she feel now?
-    She feels a lot better
-Negatives
-    I am not Govind
-Adjectives
-    More
-    Many
-    Little
-    Some
-    Any
-    Always
-    Never
-    Sometimes
-    Usually
-    Rarely
-Tenses
-    Do you drink tea?
-    I drink tea
-    Did you drink tea?
-    I drank tea
-    Will you drink tea?
-    I will drink tea
-    Are you drinking tea?
-    I am drinking tea
-    Is he happy?
-    He is happy
-    Were they happy?
-    They were happy
-    Will we be happy?
-    We will be happy
-    How are you feeling?
-    You are feeling happy
+Present Tense
+    I am happy.
+    You are happy.
+    You are happy. (formal)
+    You are happy. (plural)
+    He is happy.
+    She is happy.
+    It is happy.
+    We are happy.
+    They are happy.
+
+Past Tense
+    I was happy.
+    You were happy.
+    You were happy. (formal)
+    You were happy. (plural)
+    He was happy.
+    She was happy.
+    It was happy.
+    We were happy.
+    They were happy.
+
+Perfect Tense
+    I have been happy.
+    You have been happy.
+    You have been happy. (formal)
+    You have been happy. (plural)
+    He has been happy.
+    She has been happy.
+    It has been happy.
+    We have been happy.
+    They have been happy.
+
+Future Tense
+    I will be happy.
+    You will be happy.
+    You will be happy. (formal)
+    You will be happy. (plural)
+    He will be happy.
+    She will be happy.
+    It will be happy.
+    We will be happy.
+    They will be happy.
+
+Modal: Can
+    I can be happy.
+    You can be happy.
+    You can be happy. (formal)
+    You can be happy. (plural)
+    He can be happy.
+    She can be happy.
+    It can be happy.
+    We can be happy.
+    They can be happy.
+
+Modal: Must
+    I must be happy.
+    You must be happy.
+    You must be happy. (formal)
+    You must be happy. (plural)
+    He must be happy.
+    She must be happy.
+    It must be happy.
+    We must be happy.
+    They must be happy.
+
+Modal: May
+    I may be happy.
+    You may be happy.
+    You may be happy. (formal)
+    You may be happy. (plural)
+    He may be happy.
+    She may be happy.
+    It may be happy.
+    We may be happy.
+    They may be happy.
+
+Modal: Want
+    I want to be happy.
+    You want to be happy.
+    You want to be happy. (formal)
+    You want to be happy. (plural)
+    He wants to be happy.
+    She wants to be happy.
+    It wants to be happy.
+    We want to be happy.
+    They want to be happy.
+
+Have / Has
+    I have a car.
+    You have a car.
+    You have a car. (formal)
+    You have a car. (plural)
+    He has a car.
+    She has a car.
+    It has a car.
+    We have a car.
+    They have a car.
+
+Had
+    I had a car.
+    You had a car.
+    You had a car. (formal)
+    You had a car. (plural)
+    He had a car.
+    She had a car.
+    It had a car.
+    We had a car.
+    They had a car.
+
+Tense Contrasts
+    What do you eat? / What are you eating?
+    What did you eat?
+    What will you eat?
+    When are you coming? / When do you come?
+    When did you come?
+    When will you come?
+    Why are you late?
+    Why were you late?
+    Why will you be late?
+    How is it going? / How are you?
+    How did it go?
+    How will it go?
+    Where do you live?
+    Where did you live?
+    Where will you live?
+    Which language do you speak?
+    Which language did you speak?
+    Which language will you speak?
+    Who is the teacher?
+    Who was the teacher?
+    Who will be the teacher?

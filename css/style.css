@@ -62,6 +62,21 @@ body {
   color: var(--text);
 }
 
+/* Language-specific script fonts: prioritize the proper system fonts for
+   each Indic script so phrases render reliably across platforms. */
+.lang-hi .text,
+.lang-hi .lang-label {
+  font-family: "Noto Sans Devanagari", "Nirmala UI", "Mangal", "Lohit Devanagari", sans-serif;
+}
+.lang-kn .text,
+.lang-kn .lang-label {
+  font-family: "Noto Sans Kannada", "Nirmala UI", "Mallige", "Lohit Kannada", sans-serif;
+}
+.lang-ta .text,
+.lang-ta .lang-label {
+  font-family: "Noto Sans Tamil", "Nirmala UI", "Latha", "Lohit Tamil", sans-serif;
+}
+
 .topbar {
   display: flex;
   align-items: center;

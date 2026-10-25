@@ -1,373 +1,557 @@
 const TRANSLATIONS = {
-  "Good Morning": {
-    hi: { text: "सुप्रभात", pron: "su-pra-bhaat" },
-    sa: { text: "सुप्रभातम्", pron: "su-pra-bhaa-tam" },
-    kn: { text: "ಶುಭೋದಯ", pron: "shu-bho-da-ya" },
-    ta: { text: "காலை வணக்கம்", pron: "kaa-lai va-nak-kam" },
-    nl: { text: "Goedemorgen", pron: "khoo-duh-mor-khen" }
+  "I am happy.": {
+    hi: { text: "मैं खुश हूँ", pron: "main khush hoon" },
+    kn: { text: "ನಾನು ಸಂತೋಷವಾಗಿದ್ದೇನೆ", pron: "naanu santoshavagiddene" },
+    ta: { text: "நான் மகிழ்ச்சியாக இருக்கிறேன்", pron: "naan magilchchiyaaga irukkiRen" },
   },
-  "Good Afternoon": {
-    hi: { text: "शुभ अपराह्न", pron: "shubh a-praa-hn" },
-    sa: { text: "शुभं अपराह्णम्", pron: "shub-ham a-praa-hnam" },
-    kn: { text: "ಶುಭ ಮಧ್ಯಾಹ್ನ", pron: "shu-bha madh-yaa-hna" },
-    ta: { text: "மதிய வணக்கம்", pron: "ma-di-ya va-nak-kam" },
-    nl: { text: "Goedemiddag", pron: "khoo-duh-mi-dakh" }
+  "You are happy.": {
+    hi: { text: "तुम खुश हो", pron: "tum khush ho" },
+    kn: { text: "ನೀನು ಸಂತೋಷವಾಗಿದ್ದೀಯ", pron: "neenu santoshavagiddiya" },
+    ta: { text: "நீ மகிழ்ச்சியாக இருக்கிறாய்", pron: "nee magilchchiyaaga irukkRaay" },
   },
-  "Good Evening": {
-    hi: { text: "शुभ संध्या", pron: "shubh san-dhyaa" },
-    sa: { text: "शुभं सायम्", pron: "shub-ham saa-yam" },
-    kn: { text: "ಶುಭ ಸಂಜೆ", pron: "shu-bha san-je" },
-    ta: { text: "மாலை வணக்கம்", pron: "maa-lai va-nak-kam" },
-    nl: { text: "Goedenavond", pron: "khoo-duh-nah-vont" }
+  "You are happy. (formal)": {
+    hi: { text: "आप खुश हैं", pron: "aap khush hain" },
+    kn: { text: "ನೀವು ಸಂತೋಷವಾಗಿದ್ದೀರಿ", pron: "neevu santoshavagiddiri" },
+    ta: { text: "நீங்கள் மகிழ்ச்சியாக இருக்கிறீர்கள்", pron: "neengal magilchchiyaaga irukkiReergal" },
   },
-  "Good Night": {
-    hi: { text: "शुभ रात्रि", pron: "shubh raa-tri" },
-    sa: { text: "शुभरात्रिः", pron: "shub-ha-raa-trih" },
-    kn: { text: "ಶುಭ ರಾತ್ರಿ", pron: "shu-bha raa-tri" },
-    ta: { text: "இனிய இரவு", pron: "i-ni-ya i-ra-vu" },
-    nl: { text: "Goedenacht", pron: "khoo-duh-nakht" }
-  },
-  "Hi": {
-    hi: { text: "नमस्ते", pron: "na-mas-tey" },
-    sa: { text: "नमस्ते", pron: "na-mas-tey" },
-    kn: { text: "ನಮಸ್ಕಾರ", pron: "na-mas-kaa-ra" },
-    ta: { text: "வணக்கம்", pron: "va-nak-kam" },
-    nl: { text: "Hoi", pron: "hoy" }
-  },
-  "Bye": {
-    hi: { text: "अलविदा", pron: "al-vi-daa" },
-    sa: { text: "पुनर्मिलामः", pron: "pu-nar-mi-laa-mah" },
-    kn: { text: "ವಿದಾಯ", pron: "vi-daa-ya" },
-    ta: { text: "போய் வருகிறேன்", pron: "po-y va-ru-gi-ren" },
-    nl: { text: "Doei", pron: "doo-ee" }
-  },
-  "See you later": {
-    hi: { text: "फिर मिलेंगे", pron: "phir mi-len-gey" },
-    sa: { text: "पुनः मिलामः", pron: "pu-nah mi-laa-mah" },
-    kn: { text: "ಮತ್ತೆ ಸಿಗೋಣ", pron: "mat-te si-go-na" },
-    ta: { text: "பிறகு சந்திக்கலாம்", pron: "pi-ra-gu san-di-kka-laam" },
-    nl: { text: "Tot ziens", pron: "tot zeens" }
-  },
-  "See you soon": {
-    hi: { text: "जल्दी मिलेंगे", pron: "jal-dee mi-len-gey" },
-    sa: { text: "अचिरात् मिलामः", pron: "a-chi-raat mi-laa-mah" },
-    kn: { text: "ಬೇಗ ಸಿಗೋಣ", pron: "be-ga si-go-na" },
-    ta: { text: "விரைவில் சந்திப்போம்", pron: "vi-rai-vil san-dip-pom" },
-    nl: { text: "Tot binnenkort", pron: "tot bin-nen-kort" }
-  },
-  "Nice to meet you": {
-    hi: { text: "आपसे मिलकर खुशी हुई", pron: "aap-se mil-kar khu-shi hu-ee" },
-    sa: { text: "भवता मिलित्वा प्रसन्नोऽस्मि", pron: "bha-va-taa mi-lit-vaa pra-san-no-smi" },
-    kn: { text: "ನಿಮ್ಮನ್ನು ಭೇಟಿಯಾಗಿ ಸಂತೋಷವಾಯಿತು", pron: "nim-man-nu bhe-ti-yaa-gi san-to-sha-vaa-yi-tu" },
-    ta: { text: "உங்களை சந்தித்ததில் மகிழ்ச்சி", pron: "un-ga-lai san-di-ttha-dil ma-gil-chi" },
-    nl: { text: "Leuk je te ontmoeten", pron: "lurk yuh tuh ont-moo-ten" }
-  },
-  "Who are you?": {
-    hi: { text: "आप कौन हैं?", pron: "aap kaun hain?" },
-    sa: { text: "भवान् कः?", pron: "bha-vaan kah?" },
-    kn: { text: "ನೀವು ಯಾರು?", pron: "nee-vu yaa-ru?" },
-    ta: { text: "நீங்கள் யார்?", pron: "neen-gal yaar?" },
-    nl: { text: "Wie ben je?", pron: "wee ben yuh?" }
-  },
-  "I am Govind": {
-    hi: { text: "मैं गोविंद हूँ", pron: "main go-vind hoon" },
-    sa: { text: "अहं गोविन्दः अस्मि", pron: "a-ham go-vin-dah as-mi" },
-    kn: { text: "ನಾನು ಗೋವಿಂದ", pron: "naa-nu go-vin-da" },
-    ta: { text: "நான் கோவிந்த்", pron: "naan ko-vint" },
-    nl: { text: "Ik ben Govind", pron: "ik ben go-vint" }
-  },
-  "How are you?": {
-    hi: { text: "आप कैसे हैं?", pron: "aap kai-se hain?" },
-    sa: { text: "कुशलं वर्तते?", pron: "ku-sha-lam var-ta-te?" },
-    kn: { text: "ಹೇಗಿದ್ದೀರಾ?", pron: "he-gid-dee-raa?" },
-    ta: { text: "எப்படி இருக்கிறீர்கள்?", pron: "e-ppa-di i-ruk-ki-ri-ga-ga?" },
-    nl: { text: "Hoe gaat het?", pron: "hoo khaat het?" }
-  },
-  "You are Govind. Aren't you?": {
-    hi: { text: "आप गोविंद हैं, है ना?", pron: "aap go-vind hain, hai naa?" },
-    sa: { text: "भवान् गोविन्दः, ननु?", pron: "bha-vaan go-vin-dah, na-nu?" },
-    kn: { text: "ನೀವು ಗೋವಿಂದ, ಅಲ್ಲವೇ?", pron: "nee-vu go-vin-da, al-la-ve?" },
-    ta: { text: "நீங்கள் கோவிந்த், இல்லையா?", pron: "neen-gal ko-vint, il-lai-yaa?" },
-    nl: { text: "Jij bent Govind, toch?", pron: "yay bent go-vint, tokht?" }
-  },
-  "How are you doing?": {
-    hi: { text: "कैसे चल रहे हैं?", pron: "kai-se chal ra-he hain?" },
-    sa: { text: "भवान् कथं वर्तते?", pron: "bha-vaan ka-tham var-ta-te?" },
-    kn: { text: "ನೀವು ಹೇಗಿದ್ದೀರಿ?", pron: "nee-vu he-gid-dee-ri?" },
-    ta: { text: "என்ன செய்து கொண்டிருக்கிறீர்கள்?", pron: "en-na sey-thu kon-dru-ruk-ki-reer-ga?" },
-    nl: { text: "Hoe gaat het met je?", pron: "hoo khaat het met yuh?" }
-  },
-  "What do you do?": {
-    hi: { text: "आप क्या करते हैं?", pron: "aap kyaa kar-te hain?" },
-    sa: { text: "भवान् किं करोति?", pron: "bha-vaan kim ka-ro-ti?" },
-    kn: { text: "ನೀವು ಏನು ಮಾಡುತ್ತೀರಿ?", pron: "nee-vu e-nu maa-du-ttee-ri?" },
-    ta: { text: "நீங்கள் என்ன செய்கிறீர்கள்?", pron: "neen-gal en-na sey-ki-reer-ga?" },
-    nl: { text: "Wat doe je?", pron: "vaht doo yuh?" }
-  },
-  "I am not Govind": {
-    hi: { text: "मैं गोविंद नहीं हूँ", pron: "main go-vind na-heen hoon" },
-    sa: { text: "अहं गोविन्दः नास्मि", pron: "a-ham go-vin-dah naa-smi" },
-    kn: { text: "ನಾನು ಗೋವಿಂದ ಅಲ್ಲ", pron: "naa-nu go-vin-da al-la" },
-    ta: { text: "நான் கோவிந்த் இல்லை", pron: "naan ko-vint il-lai" },
-    nl: { text: "Ik ben niet Govind", pron: "ik ben neet go-vint" }
-  },
-  "Yes, I am.": {
-    hi: { text: "हाँ, मैं हूँ", pron: "haan, main hoon" },
-    sa: { text: "आम्, अहम् अस्मि", pron: "aam, a-ham as-mi" },
-    kn: { text: "ಹೌದು, ನಾನು", pron: "hau-du, naa-nu" },
-    ta: { text: "ஆம், நான்", pron: "aam, naan" },
-    nl: { text: "Ja, dat ben ik", pron: "yaa, dat ben ik" }
-  },
-  "I am a home maker": {
-    hi: { text: "मैं एक गृहिणी हूँ", pron: "main ek gri-hi-nee hoon" },
-    sa: { text: "अहं गृहिणी अस्मि", pron: "a-ham gri-hi-nee as-mi" },
-    kn: { text: "ನಾನು ಒಬ್ಬ ಗೃಹಿಣಿ", pron: "naa-nu ob-ba gri-hi-ni" },
-    ta: { text: "நான் ஒரு இல்லத்தரசி", pron: "naan o-ru il-la-ttha-ra-si" },
-    nl: { text: "Ik ben huisvrouw", pron: "ik ben huys-vrau" }
-  },
-  "I work as an IT professional": {
-    hi: { text: "मैं आईटी पेशेवर हूँ", pron: "main aa-ee-tee pe-she-var hoon" },
-    sa: { text: "अहं सूचनाप्रौद्योगिकी व्यावसायिकः अस्मि", pron: "a-ham soo-cha-naa-prau-dyo-gi-kee vyaa-va-saa-yi-kah as-mi" },
-    kn: { text: "ನಾನು ಐಟಿ ವೃತ್ತಿಪರ", pron: "naa-nu aa-ee-tee vrut-ti-pa-ra" },
-    ta: { text: "நான் ஐடி தொழில் நிபுணர்", pron: "naan ai-ee-tee tho-zil ni-pu-nar" },
-    nl: { text: "Ik werk als IT-professional", pron: "ik werk als ay-tee pro-fes-sio-nal" }
-  },
-  "When are you coming?": {
-    hi: { text: "आप कब आ रहे हैं?", pron: "aap kab aa ra-he hain?" },
-    sa: { text: "भवान् कदा आगच्छति?", pron: "bha-vaan ka-daa aa-gach-chha-ti?" },
-    kn: { text: "ನೀವು ಯಾವಾಗ ಬರುತ್ತಿದ್ದೀರಿ?", pron: "nee-vu yaa-vaa-ga ba-ru-tti-ldee-ri?" },
-    ta: { text: "நீங்கள் எப்போது வருகிறீர்கள்?", pron: "neen-gal ep-po-dhu va-ru-gi-ree-gal?" },
-    nl: { text: "Wanneer kom je?", pron: "va-neer kom yuh?" }
-  },
-  "I will come at 12:30 PM": {
-    hi: { text: "मैं दोपहर 12:30 बजे आऊँगा", pron: "main do-pa-har ba-rah-sa-vaa ba-je aa-oo-gaa" },
-    sa: { text: "अहं द्वादशवादनस्यार्धे आगमिष्यामि", pron: "a-ham dvaa-da-sha-vaa-da-na-syaar-dhe aa-ga-mi-shyaa-mi" },
-    kn: { text: "ನಾನು ಮಧ್ಯಾಹ್ನ 12:30 ಕ್ಕೆ ಬರುತ್ತೇನೆ", pron: "naa-nu ma-dhyaa-hna 12:30 ke ba-ru-tte-ne" },
-    ta: { text: "நான் மதியம் 12:30 மணிக்கு வருவேன்", pron: "naan ma-di-yam 12:30 ma-nik-ku va-ru-ven" },
-    nl: { text: "Ik kom om 12:30 uur", pron: "ik kom om twalf der-tich uur" }
-  },
-  "Which is your hometown?": {
-    hi: { text: "आपका गृहनगर कौन सा है?", pron: "aap-kaa grih-na-gar kaun saa hai?" },
-    sa: { text: "भवतः जन्मभूमिः का?", pron: "bha-va-tah jan-ma-bhoo-mih kaa?" },
-    kn: { text: "ನಿಮ್ಮ ಊರು ಯಾವುದು?", pron: "nim-ma oo-ru yaa-va-du?" },
-    ta: { text: "உங்கள் ஊர் எது?", pron: "un-gal oor e-dhu?" },
-    nl: { text: "Wat is je geboortestad?", pron: "vaht is yuh khe-boor-te-stad?" }
-  },
-  "I am from Bangalore,India": {
-    hi: { text: "मैं बेंगलुरु से हूँ", pron: "main ben-ga-lu-ru se hoon" },
-    sa: { text: "अहं बेङ्गलूरुतः आगच्छामि", pron: "a-ham ben-ga-loo-ru-tah aa-gach-chhaa-mi" },
-    kn: { text: "ನಾನು ಬೆಂಗಳೂರಿನವನು", pron: "naa-nu ben-ga-loo-ri-na-va-nu" },
-    ta: { text: "நான் பெங்களூரைச் சேர்ந்தவன்", pron: "naan pen-ga-loo-rai ser-ntha-va-n" },
-    nl: { text: "Ik kom uit Bangalore", pron: "ik kom out ban-ga-loor" }
-  },
-  "Why are they late?": {
-    hi: { text: "वे देर से क्यों हैं?", pron: "ve der se kyon hain?" },
-    sa: { text: "ते कुतः विलम्बिताः?", pron: "te ku-tah vi-lam-bi-taah?" },
-    kn: { text: "ಅವರು ಯಾಕೆ ತಡ?", pron: "a-va-ru yaa-ke ta-da?" },
-    ta: { text: "அவர்கள் ஏன் தாமதம்?", pron: "a-var-kal yen thaa-ma-dham?" },
-    nl: { text: "Waarom zijn ze te laat?", pron: "vaa-rom zain zuh tuh laat?" }
-  },
-  "They had some personal emergency": {
-    hi: { text: "उनकी कुछ निजी आपात स्थिति थी", pron: "un-kee kuch ni-jee aa-paath sthi-ti thee" },
-    sa: { text: "तेषां किञ्चित् वैयक्तिकम् आपत्कालम् आसीत्", pron: "te-shaam kin-chit vai-yak-ti-kam aa-pat-kaa-lam aa-seet" },
-    kn: { text: "ಅವರಿಗೆ ಒಂದು ವೈಯಕ್ತಿಕ ತುರ್ತು ಪರಿಸ್ಥಿತಿ ಇತ್ತು", pron: "a-va-ri-ge on-du vai-yak-ti-ka tur-tu pa-ri-sthi-ti it-tu" },
-    ta: { text: "அவர்களுக்கு ஒரு தனிப்பட்ட அவசரம்", pron: "a-var-ka-luk-ku o-ru tha-ni-p-pat-ta a-va-sa-ram" },
-    nl: { text: "Ze hadden een persoonlijk noodgeval", pron: "zuh had-den un per-soon-luk noht-khe-val" }
-  },
-  "How does she feel now?": {
-    hi: { text: "वह अब कैसा महसूस कर रही है?", pron: "vah ab kai-saa ma-ha-soos kar ra-hi hai?" },
-    sa: { text: "सा इदानीं कथम् अनुभवति?", pron: "saa i-daa-neem ka-tham a-nu-bha-va-ti?" },
-    kn: { text: "ಅವಳು ಈಗ ಹೇಗೆ ಭಾವಿಸುತ್ತಿದ್ದಾಳೆ?", pron: "a-va-lu ee-ga he-ge bhaa-vi-su-tti-ddaa-le?" },
-    ta: { text: "அவள் இப்போது எப்படி உணர்கிறாள்?", pron: "a-val ip-po-dhu ep-pa-di u-nar-ki-raal?" },
-    nl: { text: "Hoe voelt ze zich nu?", pron: "hoo voolt zuh zikh nuu?" }
-  },
-  "She feels a lot better": {
-    hi: { text: "वह बहुत बेहतर महसूस कर रही है", pron: "vah ba-hut be-ha-tar ma-ha-soos kar ra-hi hai" },
-    sa: { text: "सा बहुत् श्रेयः अनुभवति", pron: "saa ba-hut shrey-ah a-nu-bha-va-ti" },
-    kn: { text: "ಅವಳು ತುಂಬಾ ಚೆನ್ನಾಗಿದ್ದಾಳೆ", pron: "a-va-lu tum-baa chen-naa-gi-ddaa-le" },
-    ta: { text: "அவள் மிகவும் நன்றாக இருக்கிறாள்", pron: "a-val mi-ga-vum nan-raa-ga i-ru-kki-raal" },
-    nl: { text: "Ze voelt zich veel beter", pron: "zuh voolt zikh feel be-ter" }
-  },
-  "More": {
-    hi: { text: "अधिक", pron: "a-dhik" },
-    sa: { text: "अधिकम्", pron: "a-dhi-kam" },
-    kn: { text: "ಇನ್ನಷ್ಟು", pron: "in-nash-tu" },
-    ta: { text: "மேலும்", pron: "me-lum" },
-    nl: { text: "Meer", pron: "meer" }
-  },
-  "Many": {
-    hi: { text: "अनेक", pron: "a-nek" },
-    sa: { text: "बहवः", pron: "ba-ha-vah" },
-    kn: { text: "ಅನೇಕ", pron: "a-ne-ka" },
-    ta: { text: "பல", pron: "pa-la" },
-    nl: { text: "Veel", pron: "feel" }
-  },
-  "Little": {
-    hi: { text: "थोड़ा", pron: "tho-daa" },
-    sa: { text: "अल्पम्", pron: "al-pam" },
-    kn: { text: "ಸ್ವಲ್ಪ", pron: "sval-pa" },
-    ta: { text: "சிறிது", pron: "si-ri-dhu" },
-    nl: { text: "Weinig", pron: "vay-nikh" }
-  },
-  "Some": {
-    hi: { text: "कुछ", pron: "kuch" },
-    sa: { text: "किञ्चित्", pron: "kin-chit" },
-    kn: { text: "ಕೆಲವು", pron: "ke-la-vu" },
-    ta: { text: "சில", pron: "si-la" },
-    nl: { text: "Sommige", pron: "som-mi-khe" }
-  },
-  "Any": {
-    hi: { text: "कोई", pron: "ko-ee" },
-    sa: { text: "किमपि", pron: "ki-ma-pi" },
-    kn: { text: "ಯಾವುದಾದರೂ", pron: "yaa-vu-daa-da-roo" },
-    ta: { text: "எதாவது", pron: "e-dhaa-vu-dhu" },
-    nl: { text: "Enig", pron: "ay-nikh" }
-  },
-  "Always": {
-    hi: { text: "हमेशा", pron: "ha-me-shaa" },
-    sa: { text: "सदा", pron: "sa-daa" },
-    kn: { text: "ಯಾವಾಗಲೂ", pron: "yaa-vaa-ga-loo" },
-    ta: { text: "எப்போதும்", pron: "ep-po-dhum" },
-    nl: { text: "Altijd", pron: "al-tayt" }
-  },
-  "Never": {
-    hi: { text: "कभी नहीं", pron: "ka-bhee na-heen" },
-    sa: { text: "न कदापि", pron: "na ka-daa-pi" },
-    kn: { text: "ಎಂದಿಗೂ", pron: "en-di-goo" },
-    ta: { text: "ஒருபோதும்", pron: "o-ru-po-dhum" },
-    nl: { text: "Nooit", pron: "noyt" }
-  },
-  "Sometimes": {
-    hi: { text: "कभी-कभी", pron: "ka-bhee-ka-bhee" },
-    sa: { text: "कदाचित्", pron: "ka-daa-chit" },
-    kn: { text: "ಕೆಲವೊಮ್ಮೆ", pron: "ke-la-vom-me" },
-    ta: { text: "சில சமயம்", pron: "si-la sa-ma-yam" },
-    nl: { text: "Soms", pron: "soms" }
-  },
-  "Usually": {
-    hi: { text: "आमतौर पर", pron: "aam-ta-ur par" },
-    sa: { text: "सामान्यतः", pron: "saa-maa-nya-tah" },
-    kn: { text: "ಸಾಮಾನ್ಯವಾಗಿ", pron: "saa-maa-nya-vaa-gi" },
-    ta: { text: "வழக்கமாக", pron: "va-zhak-ka-maa-ga" },
-    nl: { text: "Meestal", pron: "mes-tal" }
-  },
-  "Rarely": {
-    hi: { text: "शायद ही", pron: "shaa-yad hee" },
-    sa: { text: "विरलतया", pron: "vi-ra-la-ta-yaa" },
-    kn: { text: "ಅಪರೂಪವಾಗಿ", pron: "a-pa-roo-pa-vaa-gi" },
-    ta: { text: "அரிதாக", pron: "a-ri-thaa-ga" },
-    nl: { text: "Zelden", pron: "zel-den" }
-  },
-  "Do you drink tea?": {
-    hi: { text: "क्या आप चाय पीते हैं?", pron: "kyaa aap chaay pee-te hain?" },
-    sa: { text: "भवान् किं चायम् पिबति?", pron: "bha-vaan kim chaa-yam pi-ba-ti?" },
-    kn: { text: "ನೀವು ಚಹಾ ಕುಡಿಯುತ್ತೀರಾ?", pron: "nee-vu cha-haa ku-di-yuu-ttee-raa?" },
-    ta: { text: "நீங்கள் தேநீர் குடிக்கிறீர்களா?", pron: "neen-gal the-neer ku-di-kki-ree-ga-laa?" },
-    nl: { text: "Drink je thee?", pron: "drink yuh tee?" }
-  },
-  "I drink tea": {
-    hi: { text: "मैं चाय पीता हूँ", pron: "main chaay pee-taa hoon" },
-    sa: { text: "अहं चायम् पिबामि", pron: "a-ham chaa-yam pi-baa-mi" },
-    kn: { text: "ನಾನು ಚಹಾ ಕುಡಿಯುತ್ತೇನೆ", pron: "naa-nu cha-haa ku-di-yuu-tte-ne" },
-    ta: { text: "நான் தேநீர் குடிக்கிறேன்", pron: "naan the-neer ku-di-kki-ren" },
-    nl: { text: "Ik drink thee", pron: "ik drink tee" }
-  },
-  "Did you drink tea?": {
-    hi: { text: "क्या आपने चाय पी?", pron: "kyaa aap-ne chaay pee?" },
-    sa: { text: "भवान् किं चायम् अपिबत्?", pron: "bha-vaan kim chaa-yam a-pi-bat?" },
-    kn: { text: "ನೀವು ಚಹಾ ಕುಡಿದಿದ್ದೀರಾ?", pron: "nee-vu cha-haa ku-di-di-ldee-raa?" },
-    ta: { text: "நீங்கள் தேநீர் குடித்தீர்களா?", pron: "neen-gal the-neer ku-di-ttee-ga-laa?" },
-    nl: { text: "Heb je thee gedronken?", pron: "hep yuh tee khe-dron-ken?" }
-  },
-  "I drank tea": {
-    hi: { text: "मैंने चाय पी", pron: "main-ne chaay pee" },
-    sa: { text: "अहं चायम् अपिबम्", pron: "a-ham chaa-yam a-pi-bam" },
-    kn: { text: "ನಾನು ಚಹಾ ಕುಡಿದೆ", pron: "naa-nu cha-haa ku-di-de" },
-    ta: { text: "நான் தேநீர் குடித்தேன்", pron: "naan the-neer ku-di-tten" },
-    nl: { text: "Ik heb thee gedronken", pron: "ik hep tee khe-dron-ken" }
-  },
-  "Will you drink tea?": {
-    hi: { text: "क्या आप चाय पीयेंगे?", pron: "kyaa aap chaay pee-yen-ge?" },
-    sa: { text: "भवान् किं चायम् पास्यति?", pron: "bha-vaan kim chaa-yam paa-sya-ti?" },
-    kn: { text: "ನೀವು ಚಹಾ ಕುಡಿಯುವಿರಾ?", pron: "nee-vu cha-haa ku-di-yu-vi-raa?" },
-    ta: { text: "நீங்கள் தேநீர் குடிப்பீர்களா?", pron: "neen-gal the-neer ku-dip-pee-ga-laa?" },
-    nl: { text: "Zul je thee drinken?", pron: "zul yuh tee drin-ken?" }
-  },
-  "I will drink tea": {
-    hi: { text: "मैं चाय पीऊँगा", pron: "main chaay pee-oo-ngaa" },
-    sa: { text: "अहं चायम् पास्यामि", pron: "a-ham chaa-yam paa-syaa-mi" },
-    kn: { text: "ನಾನು ಚಹಾ ಕುಡಿಯುತ್ತೇನೆ", pron: "naa-nu cha-haa ku-di-yuu-tte-ne" },
-    ta: { text: "நான் தேநீர் குடிப்பேன்", pron: "naan the-neer ku-dip-pen" },
-    nl: { text: "Ik zal thee drinken", pron: "ik zal tee drin-ken" }
-  },
-  "Are you drinking tea?": {
-    hi: { text: "क्या आप चाय पी रहे हैं?", pron: "kyaa aap chaay pee ra-he hain?" },
-    sa: { text: "भवान् किं चायम् पिबन् अस्ति?", pron: "bha-vaan kim chaa-yam pi-ban as-ti?" },
-    kn: { text: "ನೀವು ಚಹಾ ಕುಡಿಯುತ್ತಿದ್ದೀರಾ?", pron: "nee-vu cha-haa ku-di-yuu-tti-ldee-raa?" },
-    ta: { text: "நீங்கள் தேநீர் குடித்துக் கொண்டிருக்கிறீர்களா?", pron: "neen-gal the-neer ku-di-ttuk kon-dru-i-ru-kki-ree-ga-laa?" },
-    nl: { text: "Ben je thee aan het drinken?", pron: "ben yuh tee aan het drin-ken?" }
-  },
-  "I am drinking tea": {
-    hi: { text: "मैं चाय पी रहा हूँ", pron: "main chaay pee ra-haa hoon" },
-    sa: { text: "अहं चायम् पिबन् अस्मि", pron: "a-ham chaa-yam pi-ban as-mi" },
-    kn: { text: "ನಾನು ಚಹಾ ಕುಡಿಯುತ್ತಿದ್ದೇನೆ", pron: "naa-nu cha-haa ku-di-yuu-tti-dde-ne" },
-    ta: { text: "நான் தேநீர் குடித்துக் கொண்டிருக்கிறேன்", pron: "naan the-neer ku-di-ttuk kon-dru-i-ru-kki-ren" },
-    nl: { text: "Ik ben thee aan het drinken", pron: "ik ben tee aan het drin-ken" }
-  },
-  "Is he happy?": {
-    hi: { text: "क्या वह खुश है?", pron: "kyaa vah khush hai?" },
-    sa: { text: "किं सः प्रसन्नः?", pron: "kim sah pra-san-nah?" },
-    kn: { text: "ಅವನು ಸಂತೋಷವಾಗಿದ್ದಾನೆಯೇ?", pron: "a-va-nu san-to-sha-vaa-gi-ddaa-ne-ye?" },
-    ta: { text: "அவன் சந்தோஷமாக இருக்கிறானா?", pron: "a-van san-tho-sha-maa-ga i-ru-kki-raa-naa?" },
-    nl: { text: "Is hij blij?", pron: "is hay blay?" }
-  },
-  "He is happy": {
+  "He is happy.": {
     hi: { text: "वह खुश है", pron: "vah khush hai" },
-    sa: { text: "सः प्रसन्नः", pron: "sah pra-san-nah" },
-    kn: { text: "ಅವನು ಸಂತೋಷವಾಗಿದ್ದಾನೆ", pron: "a-va-nu san-to-sha-vaa-gi-ddaa-ne" },
-    ta: { text: "அவன் சந்தோஷமாக இருக்கிறான்", pron: "a-van san-tho-sha-maa-ga i-ru-kki-raan" },
-    nl: { text: "Hij is blij", pron: "hay is blay" }
+    kn: { text: "ಅವನು ಸಂತೋಷವಾಗಿದ್ದಾನೆ", pron: "avanu santoshavagiddaane" },
+    ta: { text: "அவன் மகிழ்ச்சியாக இருக்கிறான்", pron: "avan magilchchiyaaga irukkiRaan" },
   },
-  "Were they happy?": {
-    hi: { text: "क्या वे खुश थे?", pron: "kyaa ve khush the?" },
-    sa: { text: "किं ते प्रसन्नाः आसन्?", pron: "kim te pra-san-naah aa-san?" },
-    kn: { text: "ಅವರು ಸಂತೋಷವಾಗಿದ್ದರಾ?", pron: "a-va-ru san-to-sha-vaa-gi-dda-raa?" },
-    ta: { text: "அவர்கள் சந்தோஷமாக இருந்தார்களா?", pron: "a-var-kal san-tho-sha-maa-ga i-run-dhaar-ga-laa?" },
-    nl: { text: "Waren ze blij?", pron: "vaa-ren zuh blay?" }
+  "She is happy.": {
+    hi: { text: "वह खुश है", pron: "vah khush hai" },
+    kn: { text: "ಅವಳು ಸಂತೋಷವಾಗಿದ್ದಾಳೆ", pron: "avalu santoshavagiddaale" },
+    ta: { text: "அவள் மகிழ்ச்சியாக இருக்கிறாள்", pron: "aval magilchchiyaaga irukkiRaal" },
   },
-  "They were happy": {
+  "It is happy.": {
+    hi: { text: "यह खुश है", pron: "yah khush hai" },
+    kn: { text: "ಅದು ಸಂತೋಷವಾಗಿದೆ", pron: "adu santoshavagide" },
+    ta: { text: "அது மகிழ்ச்சியாக இருக்கிறது", pron: "adu magilchchiyaaga irukkiRadu" },
+  },
+  "We are happy.": {
+    hi: { text: "हम खुश हैं", pron: "ham khush hain" },
+    kn: { text: "ನಾವು ಸಂತೋಷವಾಗಿದ್ದೇವೆ", pron: "naavu santoshavagiddeve" },
+    ta: { text: "நாம் மகிழ்ச்சியாக இருக்கிறோம்", pron: "naam magilchchiyaaga irukkiRom" },
+  },
+  "You are happy. (plural)": {
+    hi: { text: "आप सब खुश हैं", pron: "aap sab khush hain" },
+    kn: { text: "ನೀವು ಸಂತೋಷವಾಗಿದ್ದೀರಿ", pron: "neevu santoshavagiddiri" },
+    ta: { text: "நீங்கள் மகிழ்ச்சியாக இருக்கிறீர்கள்", pron: "neengal magilchchiyaaga irukkiReergal" },
+  },
+  "They are happy.": {
+    hi: { text: "वे खुश हैं", pron: "ve khush hain" },
+    kn: { text: "ಅವರು ಸಂತೋಷವಾಗಿದ್ದಾರೆ", pron: "avaru santoshavagiddaare" },
+    ta: { text: "அவர்கள் மகிழ்ச்சியாக இருக்கிறார்கள்", pron: "avargal magilchchiyaaga irukkiRaargal" },
+  },
+  "I was happy.": {
+    hi: { text: "मैं खुश था", pron: "main khush thaa" },
+    kn: { text: "ನಾನು ಸಂತೋಷವಾಗಿದ್ದೆ", pron: "naanu santoshavagidde" },
+    ta: { text: "நான் மகிழ்ச்சியாக இருந்தேன்", pron: "naan magilchchiyaaga irundhen" },
+  },
+  "You were happy.": {
+    hi: { text: "तुम खुश थे", pron: "tum khush the" },
+    kn: { text: "ನೀನು ಸಂತೋಷವಾಗಿದ್ದೆ", pron: "neenu santoshavagidde" },
+    ta: { text: "நீ மகிழ்ச்சியாக இருந்தாய்", pron: "nee magilchchiyaaga irunthaay" },
+  },
+  "You were happy. (formal)": {
+    hi: { text: "आप खुश थे", pron: "aap khush the" },
+    kn: { text: "ನೀವು ಸಂತೋಷವಾಗಿದ್ದಿರಿ", pron: "neevu santoshavagiddiri" },
+    ta: { text: "நீங்கள் மகிழ்ச்சியாக இருந்தீர்கள்", pron: "neengal magilchchiyaaga irundheergal" },
+  },
+  "He was happy.": {
+    hi: { text: "वह खुश था", pron: "vah khush thaa" },
+    kn: { text: "ಅವನು ಸಂತೋಷವಾಗಿದ್ದನು", pron: "avanu santoshavagiddanu" },
+    ta: { text: "அவன் மகிழ்ச்சியாக இருந்தான்", pron: "avan magilchchiyaaga irundhaan" },
+  },
+  "She was happy.": {
+    hi: { text: "वह खुश थी", pron: "vah khush thee" },
+    kn: { text: "ಅವಳು ಸಂತೋಷವಾಗಿದ್ದಳು", pron: "avalu santoshavagiddalu" },
+    ta: { text: "அவள் மகிழ்ச்சியாக இருந்தாள்", pron: "aval magilchchiyaaga irundhaal" },
+  },
+  "It was happy.": {
+    hi: { text: "यह खुश था", pron: "yah khush thaa" },
+    kn: { text: "ಅದು ಸಂತೋಷವಾಗಿತ್ತು", pron: "adu santoshavagittu" },
+    ta: { text: "அது மகிழ்ச்சியாக இருந்தது", pron: "adu magilchchiyaaga irundhadu" },
+  },
+  "We were happy.": {
+    hi: { text: "हम खुश थे", pron: "ham khush the" },
+    kn: { text: "ನಾವು ಸಂತೋಷವಾಗಿದ್ದೆವು", pron: "naavu santoshavagiddevu" },
+    ta: { text: "நாம் மகிழ்ச்சியாக இருந்தோம்", pron: "naam magilchchiyaaga irundhom" },
+  },
+  "You were happy. (plural)": {
+    hi: { text: "आप सब खुश थे", pron: "aap sab khush the" },
+    kn: { text: "ನೀವು ಸಂತೋಷವಾಗಿದ್ದಿರಿ", pron: "neevu santoshavagiddiri" },
+    ta: { text: "நீங்கள் மகிழ்ச்சியாக இருந்தீர்கள்", pron: "neengal magilchchiyaaga irundheergal" },
+  },
+  "They were happy.": {
     hi: { text: "वे खुश थे", pron: "ve khush the" },
-    sa: { text: "ते प्रसन्नाः आसन्", pron: "te pra-san-naah aa-san" },
-    kn: { text: "ಅವರು ಸಂತೋಷವಾಗಿದ್ದರು", pron: "a-va-ru san-to-sha-vaa-gi-dda-ru" },
-    ta: { text: "அவர்கள் சந்தோஷமாக இருந்தார்கள்", pron: "a-var-kal san-tho-sha-maa-ga i-run-dhaar-kal" },
-    nl: { text: "Ze waren blij", pron: "zuh vaa-ren blay" }
+    kn: { text: "ಅವರು ಸಂತೋಷವಾಗಿದ್ದರು", pron: "avaru santoshavagiddaru" },
+    ta: { text: "அவர்கள் மகிழ்ச்சியாக இருந்தார்கள்", pron: "avargal magilchchiyaaga irundhaargal" },
   },
-  "Will we be happy?": {
-    hi: { text: "क्या हम खुश होंगे?", pron: "kyaa ham khush hong-ge?" },
-    sa: { text: "किं वयं प्रसन्नाः भविष्यामः?", pron: "kim va-yam pra-san-naah bha-vi-shyaa-mah?" },
-    kn: { text: "ನಾವು ಸಂತೋಷವಾಗಿರುತ್ತೇವೆಯೇ?", pron: "naa-vu san-to-sha-vaa-gi-ru-tte-ve-ye?" },
-    ta: { text: "நாம் சந்தோஷமாக இருப்போமா?", pron: "naam san-tho-sha-maa-ga i-rup-poo-maa?" },
-    nl: { text: "Zullen we blij zijn?", pron: "zul-len wuh blay zain?" }
+  "I have been happy.": {
+    hi: { text: "मैं खुश रहा हूँ", pron: "main khush raha hoon" },
+    kn: { text: "ನಾನು ಸಂತೋಷವಾಗಿದ್ದೇನೆ", pron: "naanu santoshavagiddene" },
+    ta: { text: "நான் மகிழ்ச்சியாக இருந்திருக்கிறேன்", pron: "naan magilchchiyaaga irundhirukkiRen" },
   },
-  "We will be happy": {
-    hi: { text: "हम खुश होंगे", pron: "ham khush hong-ge" },
-    sa: { text: "वयं प्रसन्नाः भविष्यामः", pron: "va-yam pra-san-naah bha-vi-shyaa-mah" },
-    kn: { text: "ನಾವು ಸಂತೋಷವಾಗಿರುತ್ತೇವೆ", pron: "naa-vu san-to-sha-vaa-gi-ru-tte-ve" },
-    ta: { text: "நாம் சந்தோஷமாக இருப்போம்", pron: "naam san-tho-sha-maa-ga i-rup-pom" },
-    nl: { text: "We zullen blij zijn", pron: "wuh zul-len blay zain" }
+  "You have been happy.": {
+    hi: { text: "तुम खुश रहे हो", pron: "tum khush rahe ho" },
+    kn: { text: "ನೀನು ಸಂತೋಷವಾಗಿದ್ದೀಯ", pron: "neenu santoshavagiddiya" },
+    ta: { text: "நீ மகிழ்ச்சியாக இருந்திருக்கிறாய்", pron: "nee magilchchiyaaga irundhirukkRaay" },
   },
-  "How are you feeling?": {
-    hi: { text: "आप कैसा महसूस कर रहे हैं?", pron: "aap kai-saa ma-ha-soos kar ra-he hain?" },
-    sa: { text: "भवान् कथम् अनुभवति?", pron: "bha-vaan ka-tham a-nu-bha-va-ti?" },
-    kn: { text: "ನೀವು ಹೇಗೆ ಭಾವಿಸುತ್ತಿದ್ದೀರಿ?", pron: "nee-vu he-ge bhaa-vi-su-tti-ldee-ri?" },
-    ta: { text: "நீங்கள் எப்படி உணர்கிறீர்கள்?", pron: "neen-gal ep-pa-di u-nar-kee-ree-ga-l?" },
-    nl: { text: "Hoe voel je je?", pron: "hoo vool yuh yuh?" }
+  "You have been happy. (formal)": {
+    hi: { text: "आप खुश रहे हैं", pron: "aap khush rahe hain" },
+    kn: { text: "ನೀವು ಸಂತೋಷವಾಗಿದ್ದೀರಿ", pron: "neevu santoshavagiddiri" },
+    ta: { text: "நீங்கள் மகிழ்ச்சியாக இருந்திருக்கிறீர்கள்", pron: "neengal magilchchiyaaga irundhirukkiReergal" },
   },
-  "You are feeling happy": {
-    hi: { text: "आप खुश महसूस कर रहे हैं", pron: "aap khush ma-ha-soos kar ra-he hain" },
-    sa: { text: "भवान् प्रसन्नताम् अनुभवति", pron: "bha-vaan pra-san-na-taam a-nu-bha-va-ti" },
-    kn: { text: "ನೀವು ಸಂತೋಷವಾಗಿ ಭಾವಿಸುತ್ತಿದ್ದೀರಿ", pron: "nee-vu san-to-sha-vaa-gi bhaa-vi-su-tti-ldee-ri" },
-    ta: { text: "நீங்கள் சந்தோஷமாக உணர்கிறீர்கள்", pron: "neen-gal san-tho-sha-maa-ga u-nar-kee-ree-ga-l" },
-    nl: { text: "Je voelt je gelukkig", pron: "yuh voolt yuh khe-luk-kikh" }
+  "He has been happy.": {
+    hi: { text: "वह खुश रहा है", pron: "vah khush raha hai" },
+    kn: { text: "ಅವನು ಸಂತೋಷವಾಗಿದ್ದಾನೆ", pron: "avanu santoshavagiddaane" },
+    ta: { text: "அவன் மகிழ்ச்சியாக இருந்திருக்கிறான்", pron: "avan magilchchiyaaga irundhirukkiRaan" },
+  },
+  "She has been happy.": {
+    hi: { text: "वह खुश रही है", pron: "vah khush rahi hai" },
+    kn: { text: "ಅವಳು ಸಂತೋಷವಾಗಿದ್ದಾಳೆ", pron: "avalu santoshavagiddaale" },
+    ta: { text: "அவள் மகிழ்ச்சியாக இருந்திருக்கிறாள்", pron: "aval magilchchiyaaga irundhirukkiRaal" },
+  },
+  "It has been happy.": {
+    hi: { text: "यह खुश रहा है", pron: "yah khush raha hai" },
+    kn: { text: "ಅದು ಸಂತೋಷವಾಗಿದೆ", pron: "adu santoshavagide" },
+    ta: { text: "அது மகிழ்ச்சியாக இருந்திருக்கிறது", pron: "adu magilchchiyaaga irundhirukkiRadu" },
+  },
+  "We have been happy.": {
+    hi: { text: "हम खुश रहे हैं", pron: "ham khush rahe hain" },
+    kn: { text: "ನಾವು ಸಂತೋಷವಾಗಿದ್ದೇವೆ", pron: "naavu santoshavagiddeve" },
+    ta: { text: "நாம் மகிழ்ச்சியாக இருந்திருக்கிறோம்", pron: "naam magilchchiyaaga irundhirukkiRom" },
+  },
+  "You have been happy. (plural)": {
+    hi: { text: "आप सब खुश रहे हैं", pron: "aap sab khush rahe hain" },
+    kn: { text: "ನೀವು ಸಂತೋಷವಾಗಿದ್ದೀರಿ", pron: "neevu santoshavagiddiri" },
+    ta: { text: "நீங்கள் மகிழ்ச்சியாக இருந்திருக்கிறீர்கள்", pron: "neengal magilchchiyaaga irundhirukkiReergal" },
+  },
+  "They have been happy.": {
+    hi: { text: "वे खुश रहे हैं", pron: "ve khush rahe hain" },
+    kn: { text: "ಅವರು ಸಂತೋಷವಾಗಿದ್ದಾರೆ", pron: "avaru santoshavagiddaare" },
+    ta: { text: "அவர்கள் மகிழ்ச்சியாக இருந்திருக்கிறார்கள்", pron: "avargal magilchchiyaaga irundhirukkiRaargal" },
+  },
+  "I will be happy.": {
+    hi: { text: "मैं खुश रहूँगा", pron: "main khush rahoongaa" },
+    kn: { text: "ನಾನು ಸಂತೋಷವಾಗಿರುತ್ತೇನೆ", pron: "naanu santoshavagiruttene" },
+    ta: { text: "நான் மகிழ்ச்சியாக இருப்பேன்", pron: "naan magilchchiyaaga iruppen" },
+  },
+  "You will be happy.": {
+    hi: { text: "तुम खुश रहोगे", pron: "tum khush rahoge" },
+    kn: { text: "ನೀನು ಸಂತೋಷವಾಗಿರುತ್ತೀಯ", pron: "neenu santoshavagiruttiya" },
+    ta: { text: "நீ மகிழ்ச்சியாக இருப்பாய்", pron: "nee magilchchiyaaga iruppaay" },
+  },
+  "You will be happy. (formal)": {
+    hi: { text: "आप खुश रहेंगे", pron: "aap khush rahenge" },
+    kn: { text: "ನೀವು ಸಂತೋಷವಾಗಿರುತ್ತೀರಿ", pron: "neevu santoshavagiruttiri" },
+    ta: { text: "நீங்கள் மகிழ்ச்சியாக இருப்பீர்கள்", pron: "neengal magilchchiyaaga iruppeergal" },
+  },
+  "He will be happy.": {
+    hi: { text: "वह खुश रहेगा", pron: "vah khush rahegaa" },
+    kn: { text: "ಅವನು ಸಂತೋಷವಾಗಿರುತ್ತಾನೆ", pron: "avanu santoshavagiruttaane" },
+    ta: { text: "அவன் மகிழ்ச்சியாக இருப்பான்", pron: "avan magilchchiyaaga iruppaan" },
+  },
+  "She will be happy.": {
+    hi: { text: "वह खुश रहेगी", pron: "vah khush rahegee" },
+    kn: { text: "ಅವಳು ಸಂತೋಷವಾಗಿರುತ್ತಾಳೆ", pron: "avalu santoshavagiruttaale" },
+    ta: { text: "அவள் மகிழ்ச்சியாக இருப்பாள்", pron: "aval magilchchiyaaga iruppaal" },
+  },
+  "It will be happy.": {
+    hi: { text: "यह खुश रहेगा", pron: "yah khush rahegaa" },
+    kn: { text: "ಅದು ಸಂತೋಷವಾಗಿರುತ್ತದೆ", pron: "adu santoshavagiruttade" },
+    ta: { text: "அது மகிழ்ச்சியாக இருக்கும்", pron: "adu magilchchiyaaga irukkum" },
+  },
+  "We will be happy.": {
+    hi: { text: "हम खुश रहेंगे", pron: "ham khush rahenge" },
+    kn: { text: "ನಾವು ಸಂತೋಷವಾಗಿರುತ್ತೇವೆ", pron: "naavu santoshavagirutteve" },
+    ta: { text: "நாம் மகிழ்ச்சியாக இருப்போம்", pron: "naam magilchchiyaaga iruppom" },
+  },
+  "You will be happy. (plural)": {
+    hi: { text: "आप सब खुश रहेंगे", pron: "aap sab khush rahenge" },
+    kn: { text: "ನೀವು ಸಂತೋಷವಾಗಿರುತ್ತೀರಿ", pron: "neevu santoshavagiruttiri" },
+    ta: { text: "நீங்கள் மகிழ்ச்சியாக இருப்பீர்கள்", pron: "neengal magilchchiyaaga iruppeergal" },
+  },
+  "They will be happy.": {
+    hi: { text: "वे खुश रहेंगे", pron: "ve khush rahenge" },
+    kn: { text: "ಅವರು ಸಂತೋಷವಾಗಿರುತ್ತಾರೆ", pron: "avaru santoshavagiruttaare" },
+    ta: { text: "அவர்கள் மகிழ்ச்சியாக இருப்பார்கள்", pron: "avargal magilchchiyaaga iruppaargal" },
+  },
+  "I can be happy.": {
+    hi: { text: "मैं खुश रह सकता हूँ", pron: "main khush rah sakta hoon" },
+    kn: { text: "ನಾನು ಸಂತೋಷವಾಗಿರಬಲ್ಲೆ", pron: "naanu santoshavagiraballe" },
+    ta: { text: "நான் மகிழ்ச்சியாக இருக்க முடியும்", pron: "naan magilchchiyaaga irukka mudiyum" },
+  },
+  "You can be happy.": {
+    hi: { text: "तुम खुश रह सकते हो", pron: "tum khush rah sakte ho" },
+    kn: { text: "ನೀನು ಸಂತೋಷವಾಗಿರಬಲ್ಲೆ", pron: "neenu santoshavagiraballe" },
+    ta: { text: "நீ மகிழ்ச்சியாக இருக்க முடியும்", pron: "nee magilchchiyaaga irukka mudiyum" },
+  },
+  "You can be happy. (formal)": {
+    hi: { text: "आप खुश रह सकते हैं", pron: "aap khush rah sakte hain" },
+    kn: { text: "ನೀವು ಸಂತೋಷವಾಗಿರಬಲ್ಲಿರಿ", pron: "neevu santoshavagiraballiri" },
+    ta: { text: "நீங்கள் மகிழ்ச்சியாக இருக்க முடியும்", pron: "neengal magilchchiyaaga irukka mudiyum" },
+  },
+  "He can be happy.": {
+    hi: { text: "वह खुश रह सकता है", pron: "vah khush rah sakta hai" },
+    kn: { text: "ಅವನು ಸಂತೋಷವಾಗಿರಬಲ್ಲ", pron: "avanu santoshavagiraballa" },
+    ta: { text: "அவன் மகிழ்ச்சியாக இருக்க முடியும்", pron: "avan magilchchiyaaga irukka mudiyum" },
+  },
+  "She can be happy.": {
+    hi: { text: "वह खुश रह सकती है", pron: "vah khush rah sakti hai" },
+    kn: { text: "ಅವಳು ಸಂತೋಷವಾಗಿರಬಲ್ಲಳು", pron: "avalu santoshavagiraballalu" },
+    ta: { text: "அவள் மகிழ்ச்சியாக இருக்க முடியும்", pron: "aval magilchchiyaaga irukka mudiyum" },
+  },
+  "It can be happy.": {
+    hi: { text: "यह खुश रह सकता है", pron: "yah khush rah sakta hai" },
+    kn: { text: "ಅದು ಸಂತೋಷವಾಗಿರಬಲ್ಲದು", pron: "adu santoshavagiraballadu" },
+    ta: { text: "அது மகிழ்ச்சியாக இருக்க முடியும்", pron: "adu magilchchiyaaga irukka mudiyum" },
+  },
+  "We can be happy.": {
+    hi: { text: "हम खुश रह सकते हैं", pron: "ham khush rah sakte hain" },
+    kn: { text: "ನಾವು ಸಂತೋಷವಾಗಿರಬಲ್ಲೆವು", pron: "naavu santoshavagiraballeevu" },
+    ta: { text: "நாம் மகிழ்ச்சியாக இருக்க முடியும்", pron: "naam magilchchiyaaga irukka mudiyum" },
+  },
+  "You can be happy. (plural)": {
+    hi: { text: "आप सब खुश रह सकते हैं", pron: "aap sab khush rah sakte hain" },
+    kn: { text: "ನೀವು ಸಂತೋಷವಾಗಿರಬಲ್ಲಿರಿ", pron: "neevu santoshavagiraballiri" },
+    ta: { text: "நீங்கள் மகிழ்ச்சியாக இருக்க முடியும்", pron: "neengal magilchchiyaaga irukka mudiyum" },
+  },
+  "They can be happy.": {
+    hi: { text: "वे खुश रह सकते हैं", pron: "ve khush rah sakte hain" },
+    kn: { text: "ಅವರು ಸಂತೋಷವಾಗಿರಬಲ್ಲರು", pron: "avaru santoshavagiraballaru" },
+    ta: { text: "அவர்கள் மகிழ்ச்சியாக இருக்க முடியும்", pron: "avargal magilchchiyaaga irukka mudiyum" },
+  },
+  "I must be happy.": {
+    hi: { text: "मैं खुश रहना चाहिए", pron: "main khush rahnaa chahiye" },
+    kn: { text: "ನಾನು ಸಂತೋಷವಾಗಿರಬೇಕು", pron: "naanu santoshavagirabeku" },
+    ta: { text: "நான் மகிழ்ச்சியாக இருக்க வேண்டும்", pron: "naan magilchchiyaaga irukka vendum" },
+  },
+  "You must be happy.": {
+    hi: { text: "तुम खुश रहना चाहिए", pron: "tum khush rahnaa chahiye" },
+    kn: { text: "ನೀನು ಸಂತೋಷವಾಗಿರಬೇಕು", pron: "neenu santoshavagirabeku" },
+    ta: { text: "நீ மகிழ்ச்சியாக இருக்க வேண்டும்", pron: "nee magilchchiyaaga irukka vendum" },
+  },
+  "You must be happy. (formal)": {
+    hi: { text: "आप खुश रहना चाहिए", pron: "aap khush rahnaa chahiye" },
+    kn: { text: "ನೀವು ಸಂತೋಷವಾಗಿರಬೇಕು", pron: "neevu santoshavagirabeku" },
+    ta: { text: "நீங்கள் மகிழ்ச்சியாக இருக்க வேண்டும்", pron: "neengal magilchchiyaaga irukka vendum" },
+  },
+  "He must be happy.": {
+    hi: { text: "वह खुश रहना चाहिए", pron: "vah khush rahnaa chahiye" },
+    kn: { text: "ಅವನು ಸಂತೋಷವಾಗಿರಬೇಕು", pron: "avanu santoshavagirabeku" },
+    ta: { text: "அவன் மகிழ்ச்சியாக இருக்க வேண்டும்", pron: "avan magilchchiyaaga irukka vendum" },
+  },
+  "She must be happy.": {
+    hi: { text: "वह खुश रहना चाहिए", pron: "vah khush rahnaa chahiye" },
+    kn: { text: "ಅವಳು ಸಂತೋಷವಾಗಿರಬೇಕು", pron: "avalu santoshavagirabeku" },
+    ta: { text: "அவள் மகிழ்ச்சியாக இருக்க வேண்டும்", pron: "aval magilchchiyaaga irukka vendum" },
+  },
+  "It must be happy.": {
+    hi: { text: "यह खुश रहना चाहिए", pron: "yah khush rahnaa chahiye" },
+    kn: { text: "ಅದು ಸಂತೋಷವಾಗಿರಬೇಕು", pron: "adu santoshavagirabeku" },
+    ta: { text: "அது மகிழ்ச்சியாக இருக்க வேண்டும்", pron: "adu magilchchiyaaga irukka vendum" },
+  },
+  "We must be happy.": {
+    hi: { text: "हम खुश रहना चाहिए", pron: "ham khush rahnaa chahiye" },
+    kn: { text: "ನಾವು ಸಂತೋಷವಾಗಿರಬೇಕು", pron: "naavu santoshavagirabeku" },
+    ta: { text: "நாம் மகிழ்ச்சியாக இருக்க வேண்டும்", pron: "naam magilchchiyaaga irukka vendum" },
+  },
+  "You must be happy. (plural)": {
+    hi: { text: "आप सब खुश रहना चाहिए", pron: "aap sab khush rahnaa chahiye" },
+    kn: { text: "ನೀವು ಸಂತೋಷವಾಗಿರಬೇಕು", pron: "neevu santoshavagirabeku" },
+    ta: { text: "நீங்கள் மகிழ்ச்சியாக இருக்க வேண்டும்", pron: "neengal magilchchiyaaga irukka vendum" },
+  },
+  "They must be happy.": {
+    hi: { text: "वे खुश रहना चाहिए", pron: "ve khush rahnaa chahiye" },
+    kn: { text: "ಅವರು ಸಂತೋಷವಾಗಿರಬೇಕು", pron: "avaru santoshavagirabeku" },
+    ta: { text: "அவர்கள் மகிழ்ச்சியாக இருக்க வேண்டும்", pron: "avargal magilchchiyaaga irukka vendum" },
+  },
+  "I may be happy.": {
+    hi: { text: "मैं शायद खुश रहूँ", pron: "main shaayad khush rahoon" },
+    kn: { text: "ನಾನು ಸಂತೋಷವಾಗಿರಲೂಬಹುದು", pron: "naanu santoshavagiraloo bahudu" },
+    ta: { text: "நான் மகிழ்ச்சியாக இருக்கலாம்", pron: "naan magilchchiyaaga irukkalaam" },
+  },
+  "You may be happy.": {
+    hi: { text: "तुम शायद खुश रहो", pron: "tum shaayad khush raho" },
+    kn: { text: "ನೀನು ಸಂತೋಷವಾಗಿರಲೂಬಹುದು", pron: "neenu santoshavagiraloo bahudu" },
+    ta: { text: "நீ மகிழ்ச்சியாக இருக்கலாம்", pron: "nee magilchchiyaaga irukkalaam" },
+  },
+  "You may be happy. (formal)": {
+    hi: { text: "आप शायद खुश रहें", pron: "aap shaayad khush rahen" },
+    kn: { text: "ನೀವು ಸಂತೋಷವಾಗಿರಲೂಬಹುದು", pron: "neevu santoshavagiraloo bahudu" },
+    ta: { text: "நீங்கள் மகிழ்ச்சியாக இருக்கலாம்", pron: "neengal magilchchiyaaga irukkalaam" },
+  },
+  "He may be happy.": {
+    hi: { text: "वह शायद खुश रहे", pron: "vah shaayad khush rahe" },
+    kn: { text: "ಅವನು ಸಂತೋಷವಾಗಿರಲೂಬಹುದು", pron: "avanu santoshavagiraloo bahudu" },
+    ta: { text: "அவன் மகிழ்ச்சியாக இருக்கலாம்", pron: "avan magilchchiyaaga irukkalaam" },
+  },
+  "She may be happy.": {
+    hi: { text: "वह शायद खुश रहे", pron: "vah shaayad khush rahe" },
+    kn: { text: "ಅವಳು ಸಂತೋಷವಾಗಿರಲೂಬಹುದು", pron: "avalu santoshavagiraloo bahudu" },
+    ta: { text: "அவள் மகிழ்ச்சியாக இருக்கலாம்", pron: "aval magilchchiyaaga irukkalaam" },
+  },
+  "It may be happy.": {
+    hi: { text: "यह शायद खुश रहे", pron: "yah shaayad khush rahe" },
+    kn: { text: "ಅದು ಸಂತೋಷವಾಗಿರಲೂಬಹುದು", pron: "adu santoshavagiraloo bahudu" },
+    ta: { text: "அது மகிழ்ச்சியாக இருக்கலாம்", pron: "adu magilchchiyaaga irukkalaam" },
+  },
+  "We may be happy.": {
+    hi: { text: "हम शायद खुश रहें", pron: "ham shaayad khush rahen" },
+    kn: { text: "ನಾವು ಸಂತೋಷವಾಗಿರಲೂಬಹುದು", pron: "naavu santoshavagiraloo bahudu" },
+    ta: { text: "நாம் மகிழ்ச்சியாக இருக்கலாம்", pron: "naam magilchchiyaaga irukkalaam" },
+  },
+  "You may be happy. (plural)": {
+    hi: { text: "आप सब शायद खुश रहें", pron: "aap sab shaayad khush rahen" },
+    kn: { text: "ನೀವು ಸಂತೋಷವಾಗಿರಲೂಬಹುದು", pron: "neevu santoshavagiraloo bahudu" },
+    ta: { text: "நீங்கள் மகிழ்ச்சியாக இருக்கலாம்", pron: "neengal magilchchiyaaga irukkalaam" },
+  },
+  "They may be happy.": {
+    hi: { text: "वे शायद खुश रहें", pron: "ve shaayad khush rahen" },
+    kn: { text: "ಅವರು ಸಂತೋಷವಾಗಿರಲೂಬಹುದು", pron: "avaru santoshavagiraloo bahudu" },
+    ta: { text: "அவர்கள் மகிழ்ச்சியாக இருக்கலாம்", pron: "avargal magilchchiyaaga irukkalaam" },
+  },
+  "I want to be happy.": {
+    hi: { text: "मैं खुश रहना चाहता हूँ", pron: "main khush rahnaa chahta hoon" },
+    kn: { text: "ನಾನು ಸಂತೋಷವಾಗಿರಲು ಬಯಸುತ್ತೇನೆ", pron: "naanu santoshavagiralu bayasuttene" },
+    ta: { text: "நான் மகிழ்ச்சியாக இருக்க விரும்புகிறேன்", pron: "naan magilchchiyaaga irukka virumbugiRen" },
+  },
+  "You want to be happy.": {
+    hi: { text: "तुम खुश रहना चाहते हो", pron: "tum khush rahnaa chahte ho" },
+    kn: { text: "ನೀನು ಸಂತೋಷವಾಗಿರಲು ಬಯಸುತ್ತೀಯ", pron: "neenu santoshavagiralu bayasuttiya" },
+    ta: { text: "நீ மகிழ்ச்சியாக இருக்க விரும்புகிறாய்", pron: "nee magilchchiyaaga irukka virumbugiRaay" },
+  },
+  "You want to be happy. (formal)": {
+    hi: { text: "आप खुश रहना चाहते हैं", pron: "aap khush rahnaa chahte hain" },
+    kn: { text: "ನೀವು ಸಂತೋಷವಾಗಿರಲು ಬಯಸುತ್ತೀರಿ", pron: "neevu santoshavagiralu bayasuttiri" },
+    ta: { text: "நீங்கள் மகிழ்ச்சியாக இருக்க விரும்புகிறீர்கள்", pron: "neengal magilchchiyaaga irukka virumbugiReergal" },
+  },
+  "He wants to be happy.": {
+    hi: { text: "वह खुश रहना चाहता है", pron: "vah khush rahnaa chahta hai" },
+    kn: { text: "ಅವನು ಸಂತೋಷವಾಗಿರಲು ಬಯಸುತ್ತಾನೆ", pron: "avanu santoshavagiralu bayasuttaane" },
+    ta: { text: "அவன் மகிழ்ச்சியாக இருக்க விரும்புகிறான்", pron: "avan magilchchiyaaga irukka virumbugiRaan" },
+  },
+  "She wants to be happy.": {
+    hi: { text: "वह खुश रहना चाहती है", pron: "vah khush rahnaa chahti hai" },
+    kn: { text: "ಅವಳು ಸಂತೋಷವಾಗಿರಲು ಬಯಸುತ್ತಾಳೆ", pron: "avalu santoshavagiralu bayasuttaale" },
+    ta: { text: "அவள் மகிழ்ச்சியாக இருக்க விரும்புகிறாள்", pron: "aval magilchchiyaaga irukka virumbugiRaal" },
+  },
+  "It wants to be happy.": {
+    hi: { text: "यह खुश रहना चाहता है", pron: "yah khush rahnaa chahta hai" },
+    kn: { text: "ಅದು ಸಂತೋಷವಾಗಿರಲು ಬಯಸುತ್ತದೆ", pron: "adu santoshavagiralu bayasuttade" },
+    ta: { text: "அது மகிழ்ச்சியாக இருக்க விரும்புகிறது", pron: "adu magilchchiyaaga irukka virumbugiRadu" },
+  },
+  "We want to be happy.": {
+    hi: { text: "हम खुश रहना चाहते हैं", pron: "ham khush rahnaa chahte hain" },
+    kn: { text: "ನಾವು ಸಂತೋಷವಾಗಿರಲು ಬಯಸುತ್ತೇವೆ", pron: "naavu santoshavagiralu bayasutteve" },
+    ta: { text: "நாம் மகிழ்ச்சியாக இருக்க விரும்புகிறோம்", pron: "naam magilchchiyaaga irukka virumbugiRom" },
+  },
+  "You want to be happy. (plural)": {
+    hi: { text: "आप सब खुश रहना चाहते हैं", pron: "aap sab khush rahnaa chahte hain" },
+    kn: { text: "ನೀವು ಸಂತೋಷವಾಗಿರಲು ಬಯಸುತ್ತೀರಿ", pron: "neevu santoshavagiralu bayasuttiri" },
+    ta: { text: "நீங்கள் மகிழ்ச்சியாக இருக்க விரும்புகிறீர்கள்", pron: "neengal magilchchiyaaga irukka virumbugiReergal" },
+  },
+  "They want to be happy.": {
+    hi: { text: "वे खुश रहना चाहते हैं", pron: "ve khush rahnaa chahte hain" },
+    kn: { text: "ಅವರು ಸಂತೋಷವಾಗಿರಲು ಬಯಸುತ್ತಾರೆ", pron: "avaru santoshavagiralu bayasuttaare" },
+    ta: { text: "அவர்கள் மகிழ்ச்சியாக இருக்க விரும்புகிறார்கள்", pron: "avargal magilchchiyaaga irukka virumbugiRaargal" },
+  },
+  "I have a car.": {
+    hi: { text: "मेरे पास एक कार है", pron: "mere paas ek kaar hai" },
+    kn: { text: "ನನ್ನ ಬಳಿ ಕಾರು ಇದೆ", pron: "nanna bali kaaru ide" },
+    ta: { text: "என்னிடம் கார் இருக்கிறது", pron: "ennidam kaar irukkiRadu" },
+  },
+  "You have a car.": {
+    hi: { text: "तुम्हारे पास एक कार है", pron: "tumhaare paas ek kaar hai" },
+    kn: { text: "ನಿನ್ನ ಬಳಿ ಕಾರು ಇದೆ", pron: "ninna bali kaaru ide" },
+    ta: { text: "உன்னிடம் கார் இருக்கிறது", pron: "unnidam kaar irukkiRadu" },
+  },
+  "You have a car. (formal)": {
+    hi: { text: "आपके पास एक कार है", pron: "aapke paas ek kaar hai" },
+    kn: { text: "ನಿಮ್ಮ ಬಳಿ ಕಾರು ಇದೆ", pron: "nimma bali kaaru ide" },
+    ta: { text: "உங்களிடம் கார் இருக்கிறது", pron: "ungalidam kaar irukkiRadu" },
+  },
+  "He has a car.": {
+    hi: { text: "उसके पास एक कार है", pron: "uske paas ek kaar hai" },
+    kn: { text: "ಅವನ ಬಳಿ ಕಾರು ಇದೆ", pron: "avana bali kaaru ide" },
+    ta: { text: "அவனிடம் கார் இருக்கிறது", pron: "avanidam kaar irukkiRadu" },
+  },
+  "She has a car.": {
+    hi: { text: "उसके पास एक कार है", pron: "uske paas ek kaar hai" },
+    kn: { text: "ಅವಳ ಬಳಿ ಕಾರು ಇದೆ", pron: "avala bali kaaru ide" },
+    ta: { text: "அவளிடம் கார் இருக்கிறது", pron: "avalidam kaar irukkiRadu" },
+  },
+  "It has a car.": {
+    hi: { text: "उसके पास एक कार है", pron: "uske paas ek kaar hai" },
+    kn: { text: "ಅದರ ಬಳಿ ಕಾರು ಇದೆ", pron: "adara bali kaaru ide" },
+    ta: { text: "அதனிடம் கார் இருக்கிறது", pron: "athanidam kaar irukkiRadu" },
+  },
+  "We have a car.": {
+    hi: { text: "हमारे पास एक कार है", pron: "hamaare paas ek kaar hai" },
+    kn: { text: "ನಮ್ಮ ಬಳಿ ಕಾರು ಇದೆ", pron: "namma bali kaaru ide" },
+    ta: { text: "நம்மிடம் கார் இருக்கிறது", pron: "nammidam kaar irukkiRadu" },
+  },
+  "You have a car. (plural)": {
+    hi: { text: "आप सबके पास एक कार है", pron: "aap sabke paas ek kaar hai" },
+    kn: { text: "ನಿಮ್ಮ ಬಳಿ ಕಾರು ಇದೆ", pron: "nimma bali kaaru ide" },
+    ta: { text: "உங்களிடம் கார் இருக்கிறது", pron: "ungalidam kaar irukkiRadu" },
+  },
+  "They have a car.": {
+    hi: { text: "उनके पास एक कार है", pron: "unke paas ek kaar hai" },
+    kn: { text: "ಅವರ ಬಳಿ ಕಾರು ಇದೆ", pron: "avara bali kaaru ide" },
+    ta: { text: "அவர்களிடம் கார் இருக்கிறது", pron: "avargalidam kaar irukkiRadu" },
+  },
+  "I had a car.": {
+    hi: { text: "मेरे पास एक कार थी", pron: "mere paas ek kaar thee" },
+    kn: { text: "ನನ್ನ ಬಳಿ ಕಾರು ಇತ್ತು", pron: "nanna bali kaaru ittu" },
+    ta: { text: "என்னிடம் கார் இருந்தது", pron: "ennidam kaar irundhadu" },
+  },
+  "You had a car.": {
+    hi: { text: "तुम्हारे पास एक कार थी", pron: "tumhaare paas ek kaar thee" },
+    kn: { text: "ನಿನ್ನ ಬಳಿ ಕಾರು ಇತ್ತು", pron: "ninna bali kaaru ittu" },
+    ta: { text: "உன்னிடம் கார் இருந்தது", pron: "unnidam kaar irundhadu" },
+  },
+  "You had a car. (formal)": {
+    hi: { text: "आपके पास एक कार थी", pron: "aapke paas ek kaar thee" },
+    kn: { text: "ನಿಮ್ಮ ಬಳಿ ಕಾರು ಇತ್ತು", pron: "nimma bali kaaru ittu" },
+    ta: { text: "உங்களிடம் கார் இருந்தது", pron: "ungalidam kaar irundhadu" },
+  },
+  "He had a car.": {
+    hi: { text: "उसके पास एक कार थी", pron: "uske paas ek kaar thee" },
+    kn: { text: "ಅವನ ಬಳಿ ಕಾರು ಇತ್ತು", pron: "avana bali kaaru ittu" },
+    ta: { text: "அவனிடம் கார் இருந்தது", pron: "avanidam kaar irundhadu" },
+  },
+  "She had a car.": {
+    hi: { text: "उसके पास एक कार थी", pron: "uske paas ek kaar thee" },
+    kn: { text: "ಅವಳ ಬಳಿ ಕಾರು ಇತ್ತು", pron: "avala bali kaaru ittu" },
+    ta: { text: "அவளிடம் கார் இருந்தது", pron: "avalidam kaar irundhadu" },
+  },
+  "It had a car.": {
+    hi: { text: "उसके पास एक कार थी", pron: "uske paas ek kaar thee" },
+    kn: { text: "ಅದರ ಬಳಿ ಕಾರು ಇತ್ತು", pron: "adara bali kaaru ittu" },
+    ta: { text: "அதனிடம் கார் இருந்தது", pron: "athanidam kaar irundhadu" },
+  },
+  "We had a car.": {
+    hi: { text: "हमारे पास एक कार थी", pron: "hamaare paas ek kaar thee" },
+    kn: { text: "ನಮ್ಮ ಬಳಿ ಕಾರು ಇತ್ತು", pron: "namma bali kaaru ittu" },
+    ta: { text: "நம்மிடம் கார் இருந்தது", pron: "nammidam kaar irundhadu" },
+  },
+  "You had a car. (plural)": {
+    hi: { text: "आप सबके पास एक कार थी", pron: "aap sabke paas ek kaar thee" },
+    kn: { text: "ನಿಮ್ಮ ಬಳಿ ಕಾರು ಇತ್ತು", pron: "nimma bali kaaru ittu" },
+    ta: { text: "உங்களிடம் கார் இருந்தது", pron: "ungalidam kaar irundhadu" },
+  },
+  "They had a car.": {
+    hi: { text: "उनके पास एक कार थी", pron: "unke paas ek kaar thee" },
+    kn: { text: "ಅವರ ಬಳಿ ಕಾರು ಇತ್ತು", pron: "avara bali kaaru ittu" },
+    ta: { text: "அவர்களிடம் கார் இருந்தது", pron: "avargalidam kaar irundhadu" },
+  },
+  "What do you eat? / What are you eating?": {
+    hi: { text: "आप क्या खाते हैं? / आप क्या खा रहे हैं?", pron: "aap kya khaate hain? / aap kya khaa rahe hain?" },
+    kn: { text: "ನೀವು ಏನು ತಿನ್ನುತ್ತೀರಿ? / ನೀವು ಏನು ತಿನ್ನುತ್ತಿದ್ದೀರಿ?", pron: "neevu enu tinnutti-ri? / neevu enu tinnut-tiddi-ri?" },
+    ta: { text: "நீங்கள் என்ன சாப்பிடுகிறீர்கள்? / என்ன சாப்பிட்டுக் கொண்டிருக்கிறீர்கள்?", pron: "neengal enna saappidugiReergal? / enna saappittu kondu irukkiReergal?" },
+  },
+  "What did you eat?": {
+    hi: { text: "आपने क्या खाया?", pron: "aapne kya khaayaa?" },
+    kn: { text: "ನೀವು ಏನು ತಿಂದಿದ್ದೀರಿ?", pron: "neevu enu tindiddi-ri?" },
+    ta: { text: "நீங்கள் என்ன சாப்பிட்டீர்கள்?", pron: "neengal enna saappitteergal?" },
+  },
+  "What will you eat?": {
+    hi: { text: "आप क्या खाएँगे?", pron: "aap kya khaa-eng-e?" },
+    kn: { text: "ನೀವು ಏನು ತಿನ್ನುತ್ತೀರಿ?", pron: "neevu enu tinnutti-ri?" },
+    ta: { text: "நீங்கள் என்ன சாப்பிடுவீர்கள்?", pron: "neengal enna saappiduveergal?" },
+  },
+  "When are you coming? / When do you come?": {
+    hi: { text: "आप कब आ रहे हैं? / आप कब आते हैं?", pron: "aap kab aa rahe hain? / aap kab aate hain?" },
+    kn: { text: "ನೀವು ಯಾವಾಗ ಬರುತ್ತಿದ್ದೀರಿ? / ನೀವು ಯಾವಾಗ ಬರುತ್ತೀರಿ?", pron: "neevu yaavaaga barut-tiddi-ri? / neevu yaavaaga barutti-ri?" },
+    ta: { text: "நீங்கள் எப்போது வருகிறீர்கள்? / எப்போது வருவீர்கள்?", pron: "neengal eppodhu varugiReergal? / eppodhu varuveergal?" },
+  },
+  "When did you come?": {
+    hi: { text: "आप कब आए?", pron: "aap kab aaye?" },
+    kn: { text: "ನೀವು ಯಾವಾಗ ಬಂದಿದ್ದೀರಿ?", pron: "neevu yaavaaga bandiddi-ri?" },
+    ta: { text: "நீங்கள் எப்போது வந்தீர்கள்?", pron: "neengal eppodhu vandheergal?" },
+  },
+  "When will you come?": {
+    hi: { text: "आप कब आएँगे?", pron: "aap kab aa-eng-e?" },
+    kn: { text: "ನೀವು ಯಾವಾಗ ಬರುತ್ತೀರಿ?", pron: "neevu yaavaaga barutti-ri?" },
+    ta: { text: "நீங்கள் எப்போது வருவீர்கள்?", pron: "neengal eppodhu varuveergal?" },
+  },
+  "Why are you late?": {
+    hi: { text: "आप देर से क्यों हैं?", pron: "aap der se kyon hain?" },
+    kn: { text: "ನೀವು ಯಾಕೆ ತಡವಾಗಿದ್ದೀರಿ?", pron: "neevu yaake tadavaagiddi-ri?" },
+    ta: { text: "நீங்கள் ஏன் தாமதம்?", pron: "neengal yen thaa-madham?" },
+  },
+  "Why were you late?": {
+    hi: { text: "आप देर से क्यों थे?", pron: "aap der se kyon the?" },
+    kn: { text: "ನೀವು ಯಾಕೆ ತಡವಾಗಿದ್ದಿರಿ?", pron: "neevu yaake tadavaagiddi-ri?" },
+    ta: { text: "நீங்கள் ஏன் தாமதமாக இருந்தீர்கள்?", pron: "neengal yen thaa-madhamaaga irundheergal?" },
+  },
+  "Why will you be late?": {
+    hi: { text: "आप देर से क्यों होंगे?", pron: "aap der se kyon honge?" },
+    kn: { text: "ನೀವು ಯಾಕೆ ತಡವಾಗಿರುತ್ತೀರಿ?", pron: "neevu yaake tadavaagirutti-ri?" },
+    ta: { text: "நீங்கள் ஏன் தாமதமாக இருப்பீர்கள்?", pron: "neengal yen thaa-madhamaaga iruppeergal?" },
+  },
+  "How is it going? / How are you?": {
+    hi: { text: "कैसे चल रहा है? / आप कैसे हैं?", pron: "kai-se chal raha hai? / aap kai-se hain?" },
+    kn: { text: "ಹೇಗಿದೆ? / ನೀವು ಹೇಗಿದ್ದೀರಿ?", pron: "he-gide? / neevu he-giddi-ri?" },
+    ta: { text: "எப்படி இருக்கிறது? / நீங்கள் எப்படி இருக்கிறீர்கள்?", pron: "eppadi irukkiRadu? / neengal eppadi irukkiReergal?" },
+  },
+  "How did it go?": {
+    hi: { text: "कैसे गया?", pron: "kai-se gayaa?" },
+    kn: { text: "ಅದು ಹೇಗೆ ಆಯಿತು?", pron: "adu hege aayitu?" },
+    ta: { text: "அது எப்படி நடந்தது?", pron: "adhu eppadi nadandhadu?" },
+  },
+  "How will it go?": {
+    hi: { text: "कैसे जाएगा?", pron: "kai-se jaa-egaa?" },
+    kn: { text: "ಅದು ಹೇಗೆ ಆಗುತ್ತದೆ?", pron: "adu hege aaguttade?" },
+    ta: { text: "அது எப்படி நடக்கும்?", pron: "adhu eppadi nadakkum?" },
+  },
+  "Where do you live?": {
+    hi: { text: "आप कहाँ रहते हैं?", pron: "aap kahaan rahte hain?" },
+    kn: { text: "ನೀವು ಎಲ್ಲಿ ವಾಸಿಸುತ್ತೀರಿ?", pron: "neevu elli vaasisutti-ri?" },
+    ta: { text: "நீங்கள் எங்கே வசிக்கிறீர்கள்?", pron: "neengal enge vasikkiReergal?" },
+  },
+  "Where did you live?": {
+    hi: { text: "आप कहाँ रहते थे?", pron: "aap kahaan rahte the?" },
+    kn: { text: "ನೀವು ಎಲ್ಲಿ ವಾಸಿಸುತ್ತಿದ್ದಿರಿ?", pron: "neevu elli vaasisut-tiddi-ri?" },
+    ta: { text: "நீங்கள் எங்கே வசித்தீர்கள்?", pron: "neengal enge vasittheergal?" },
+  },
+  "Where will you live?": {
+    hi: { text: "आप कहाँ रहेंगे?", pron: "aap kahaan rahenge?" },
+    kn: { text: "ನೀವು ಎಲ್ಲಿ ವಾಸಿಸುತ್ತೀರಿ?", pron: "neevu elli vaasisutti-ri?" },
+    ta: { text: "நீங்கள் எங்கே வசிப்பீர்கள்?", pron: "neengal enge vasippeergal?" },
+  },
+  "Which language do you speak?": {
+    hi: { text: "आप कौन सी भाषा बोलते हैं?", pron: "aap kaun see bhaashaa bolte hain?" },
+    kn: { text: "ನೀವು ಯಾವ ಭಾಷೆ ಮಾತನಾಡುತ್ತೀರಿ?", pron: "neevu yaava bhashe maatanaadutti-ri?" },
+    ta: { text: "நீங்கள் எந்த மொழி பேசுகிறீர்கள்?", pron: "neengal entha mozhi pesugiReergal?" },
+  },
+  "Which language did you speak?": {
+    hi: { text: "आप कौन सी भाषा बोलते थे?", pron: "aap kaun see bhaashaa bolte the?" },
+    kn: { text: "ನೀವು ಯಾವ ಭಾಷೆ ಮಾತನಾಡುತ್ತಿದ್ದಿರಿ?", pron: "neevu yaava bhashe maatanaadut-tiddi-ri?" },
+    ta: { text: "நீங்கள் எந்த மொழி பேசினீர்கள்?", pron: "neengal entha mozhi pesineergal?" },
+  },
+  "Which language will you speak?": {
+    hi: { text: "आप कौन सी भाषा बोलेंगे?", pron: "aap kaun see bhaashaa bolenge?" },
+    kn: { text: "ನೀವು ಯಾವ ಭಾಷೆ ಮಾತನಾಡುತ್ತೀರಿ?", pron: "neevu yaava bhashe maatanaadutti-ri?" },
+    ta: { text: "நீங்கள் எந்த மொழி பேசுவீர்கள்?", pron: "neengal entha mozhi pesuveergal?" },
+  },
+  "Who is the teacher?": {
+    hi: { text: "शिक्षक कौन है?", pron: "shikshak kaun hai?" },
+    kn: { text: "ಶಿಕ್ಷಕರು ಯಾರು?", pron: "shikshakaru yaaru?" },
+    ta: { text: "ஆசிரியர் யார்?", pron: "aasiriyar yaar?" },
+  },
+  "Who was the teacher?": {
+    hi: { text: "शिक्षक कौन था?", pron: "shikshak kaun thaa?" },
+    kn: { text: "ಶಿಕ್ಷಕರು ಯಾರಾಗಿದ್ದರು?", pron: "shikshakaru yaaraagiddaru?" },
+    ta: { text: "ஆசிரியர் யாராக இருந்தார்?", pron: "aasiriyar yaaraaga irundhaar?" },
+  },
+  "Who will be the teacher?": {
+    hi: { text: "शिक्षक कौन होगा?", pron: "shikshak kaun hogaa?" },
+    kn: { text: "ಶಿಕ್ಷಕರು ಯಾರಾಗಿರುತ್ತಾರೆ?", pron: "shikshakaru yaaraagiruttaare?" },
+    ta: { text: "ஆசிரியர் யாராக இருப்பார்?", pron: "aasiriyar yaaraaga iruppaar?" },
   }
 };

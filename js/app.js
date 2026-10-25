@@ -68,6 +68,7 @@ function translationsFor(englishText, langKey) {
 
 async function init() {
   $("#versionTag").textContent = "v" + CONFIG.version;
+  document.title = "Glot v" + CONFIG.version + " — Phrase Player";
   applyTheme(state.settings.theme);
   buildSpeedSelect();
   bindEvents();
@@ -164,7 +165,7 @@ function renderPhrase(idx) {
     const tr = translationsFor(english, key);
     const cfg = CONFIG.languages[key];
     html +=
-      '<div class="lang-card" id="card-' + key + '">' +
+      '<div class="lang-card lang-' + key + '" id="card-' + key + '">' +
       '<div class="lang-label"><span class="dot"></span>' +
       escapeHtml(cfg.native + " · " + cfg.label) +
       "</div>";

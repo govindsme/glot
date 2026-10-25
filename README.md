@@ -1,8 +1,12 @@
 # Glot — Multi-Language Phrase Player
 
 A client-side web app that reads sentences from `glot.txt` and plays each English
-phrase aloud, followed by translations in Hindi, Sanskrit, Kannada and Tamil, using
-the browser's Web Speech API.
+phrase aloud, followed by translations in Hindi, Kannada and Tamil, using the
+browser's Web Speech API.
+
+The content is replicated from the English base phrases of the **Quick Reference**
+revision of the Dutch Lesson Revisor, added in phased lesson days. Currently at
+**Phase 1 (Day 1)** — verb conjugations and tense-contrast questions.
 
 ## Run it
 
