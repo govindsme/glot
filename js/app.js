@@ -172,6 +172,9 @@ function renderPhrase(idx) {
     if (tr) {
       html += '<div class="text">' + escapeHtml(tr.text) + "</div>";
       html += '<div class="pron">" ' + escapeHtml(tr.pron) + '"</div>';
+      if (engine.getVoicesForLang(cfg.lang).length === 0) {
+        html += '<div class="no-voice">No voice available on this device</div>';
+      }
     } else {
       html += '<div class="no-data">No translation available yet.</div>';
     }
@@ -364,32 +367,40 @@ function renderSettings() {
     row.className = "voice-row";
     row.innerHTML =
       '<span class="lang-name">' + escapeHtml(v.name) + "</span>";
-    const sel = document.createElement("select");
-    sel.dataset.voice = v.key;
     const langCode = v.key === "en" ? CONFIG.english.lang : CONFIG.languages[v.key].lang;
 
-    const optDefault = document.createElement("option");
-    optDefault.value = "";
-    optDefault.textContent = "System default";
-    sel.appendChild(optDefault);
-
     const langVoices = engine.getVoicesForLang(langCode);
-    for (const vc of langVoices) {
-      const opt = document.createElement("option");
-      opt.value = vc.voiceURI;
-      opt.textContent = vc.name + " (" + vc.lang + ")";
-      sel.appendChild(opt);
+    const hasVoices = v.key === "en" || langVoices.length > 0;
+    if (!hasVoices) {
+      const note = document.createElement("div");
+      note.className = "voice-missing";
+      note.innerHTML =
+        "No " + escapeHtml(v.name) + " voice available on this device. " +
+        'Install the <em>' + escapeHtml(v.name) + '</em> language + voice in your OS/browser to hear it.';
+      row.appendChild(note);
+    } else {
+      const sel = document.createElement("select");
+      sel.dataset.voice = v.key;
+      const optDefault = document.createElement("option");
+      optDefault.value = "";
+      optDefault.textContent = "System default";
+      sel.appendChild(optDefault);
+      for (const vc of langVoices) {
+        const opt = document.createElement("option");
+        opt.value = vc.voiceURI;
+        opt.textContent = vc.name + " (" + vc.lang + ")";
+        sel.appendChild(opt);
+      }
+      sel.value = state.settings.voices[v.key] || "";
+      if (sel.value === "" && engine.getDefaultVoice(langCode)) {
+        sel.value = engine.getDefaultVoice(langCode).voiceURI;
+      }
+      if (!sel.value && langVoices.length) sel.value = langVoices[0].voiceURI;
+      sel.addEventListener("change", () => {
+        state.settings.voices[v.key] = sel.value;
+      });
+      row.appendChild(sel);
     }
-    sel.value = state.settings.voices[v.key] || "";
-    if (sel.value === "" && langVoices.length && engine.getDefaultVoice(langCode)) {
-      sel.value = engine.getDefaultVoice(langCode).voiceURI;
-    }
-    if (!sel.value && langVoices.length) sel.value = langVoices[0].voiceURI;
-
-    sel.addEventListener("change", () => {
-      state.settings.voices[v.key] = sel.value;
-    });
-    row.appendChild(sel);
     voices.appendChild(row);
   }
 

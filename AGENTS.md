@@ -87,6 +87,10 @@ For each English phrase, in order:
 - "System default voice" = the voice marked `default: true` in the browser for that
   language; if none, the first voice for that language. Selected automatically.
 - Users override voices per language in Settings; persisted as voiceURIs.
+- Some target languages may have **no installed voice** on the user's OS/browser
+  (e.g. Kannada/Tamil on Chrome/Windows). The app detects this and shows a clear
+  "No voice available on this device" note on the language card and in Settings —
+  it never fails hard, it just cannot produce sound the OS has no voice for.
 
 ## Settings & persistence
 

@@ -455,6 +455,27 @@ input[type="number"] {
   flex: 1;
 }
 
+.voice-missing {
+  flex: 1;
+  font-size: 12px;
+  color: var(--muted);
+  background: var(--panel-2);
+  border: 1px dashed var(--border);
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+
+.voice-missing em {
+  font-style: italic;
+}
+
+.lang-card .no-voice {
+  font-size: 12px;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 6px;
+}
+
 .toggle-row {
   display: flex;
   align-items: center;

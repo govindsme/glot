@@ -1,5 +1,5 @@
 const CONFIG = {
-  version: "2.0.0",
+  version: "2.0.1",
   dataFile: "glot.txt",
   speed: 1,
   speedOptions: [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2],
