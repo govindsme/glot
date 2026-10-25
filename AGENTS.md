@@ -91,6 +91,11 @@ For each English phrase, in order:
   (e.g. Kannada/Tamil on Chrome/Windows). The app detects this and shows a clear
   "No voice available on this device" note on the language card and in Settings —
   it never fails hard, it just cannot produce sound the OS has no voice for.
+- Edge desktop often exposes only **"Online (Natural)"** neural voices for Indian
+  languages. These appear in `getVoices()` but the Web Speech API cannot actually
+  play them through `speechSynthesis` (only local voices work there). The app
+  detects remote/online voices (`engine.isRemoteVoice` / `hasPlayableVoice`) and
+  labels them "(online)" and warns when a language has only unplayable voices.
 
 ## Settings & persistence
 

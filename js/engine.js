@@ -13,6 +13,20 @@ class SpeechEngine {
     return !!this.synth;
   }
 
+  // Detect voices the Web Speech API generally cannot play through speak():
+  // Microsoft Edge "Online (Natural)" neural voices (and other remote voices)
+  // show up in getVoices() but do not produce audio via speechSynthesis.
+  isRemoteVoice(v) {
+    if (!v) return false;
+    if (v.localService === false) return true;
+    return /online/i.test(v.name || "") || /natural/i.test(v.name || "");
+  }
+
+  hasPlayableVoice(langCode) {
+    const list = this.getVoicesForLang(langCode);
+    return list.some((v) => !this.isRemoteVoice(v));
+  }
+
   _bindVoiceLoad() {
     if (!this.synth) return;
     const load = () => {

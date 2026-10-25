@@ -172,8 +172,11 @@ function renderPhrase(idx) {
     if (tr) {
       html += '<div class="text">' + escapeHtml(tr.text) + "</div>";
       html += '<div class="pron">" ' + escapeHtml(tr.pron) + '"</div>';
-      if (engine.getVoicesForLang(cfg.lang).length === 0) {
+      const voices = engine.getVoicesForLang(cfg.lang);
+      if (voices.length === 0) {
         html += '<div class="no-voice">No voice available on this device</div>';
+      } else if (!engine.hasPlayableVoice(cfg.lang)) {
+        html += '<div class="no-voice">Voice is online-only — may not play here</div>';
       }
     } else {
       html += '<div class="no-data">No translation available yet.</div>';
@@ -371,6 +374,7 @@ function renderSettings() {
 
     const langVoices = engine.getVoicesForLang(langCode);
     const hasVoices = v.key === "en" || langVoices.length > 0;
+    const hasPlayable = v.key === "en" ? true : engine.hasPlayableVoice(langCode);
     if (!hasVoices) {
       const note = document.createElement("div");
       note.className = "voice-missing";
@@ -388,7 +392,8 @@ function renderSettings() {
       for (const vc of langVoices) {
         const opt = document.createElement("option");
         opt.value = vc.voiceURI;
-        opt.textContent = vc.name + " (" + vc.lang + ")";
+        const online = engine.isRemoteVoice(vc) ? " (online)" : "";
+        opt.textContent = vc.name + " (" + vc.lang + ")" + online;
         sel.appendChild(opt);
       }
       sel.value = state.settings.voices[v.key] || "";
@@ -400,6 +405,15 @@ function renderSettings() {
         state.settings.voices[v.key] = sel.value;
       });
       row.appendChild(sel);
+      if (!hasPlayable) {
+        const note = document.createElement("div");
+        note.className = "voice-missing";
+        note.innerHTML =
+          "Only <em>online</em> " + escapeHtml(v.name) + " voices are installed here; " +
+          "they may not play through the browser's speech engine. Install a local " +
+          '<em>' + escapeHtml(v.name) + '</em> voice for reliable sound.';
+        row.appendChild(note);
+      }
     }
     voices.appendChild(row);
   }
